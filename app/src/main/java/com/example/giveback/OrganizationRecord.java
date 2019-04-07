@@ -15,6 +15,8 @@ public class OrganizationRecord {
     private String advanceNoticeWindow;
     private String logo;
 
+
+
     public OrganizationRecord(String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo){
         this.category = category;
         this.orgName = orgName;
@@ -31,36 +33,52 @@ public class OrganizationRecord {
         this.logo = logo;
     }
 
-    public String getCategory() {
-        return category;
-    }
+    public String getAcceptedCategories() { return acceptedCategories; }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
+    public void setAcceptedCategories(String acceptedCategories) { this.acceptedCategories = acceptedCategories; }
 
-    public String getOrgName() {
-        return orgName;
-    }
+    public String getLogin() { return login; }
 
-    public void setOrgName(String orgName) {
-        this.orgName = orgName;
-    }
+    public void setLogin(String login) { this.login = login; }
 
-    public String getDonation() { return donation; }
+    public String getId() { return id; }
 
-    public void setDonation(String donation) { this.donation = donation; }
+    public void setId(String id) { this.id = id; }
 
-    public String getLocation() { return location; }
+    public String getPickUpRegions() { return pickUpRegions; }
 
-    public void setLocation(String location) { this.location = location; }
+    public void setPickUpRegions(String pickUpRegions) { this.pickUpRegions = pickUpRegions; }
 
-    public String getTime() { return time; }
+    public String getPickUpHours() { return pickUpHours; }
 
-    public void setTime(String time) { this.time = time; }
+    public void setPickUpHours(String pickUpHours) { this.pickUpHours = pickUpHours; }
 
-    public String getTag() { return tag; }
+    public String getContactInfo() { return contactInfo; }
 
-    public void setTag(String tag) { this.tag = tag; }
+    public void setContactInfo(String contactInfo) { this.contactInfo = contactInfo; }
+
+    public String getOrgDescription() { return orgDescription; }
+
+    public void setOrgDescription(String orgDescription) { this.orgDescription = orgDescription; }
+
+    public String getAcceptedItems() { return acceptedItems; }
+
+    public void setAcceptedItems(String acceptedItems) { this.acceptedItems = acceptedItems; }
+
+    public String getWebsite() { return website; }
+
+    public void setWebsite(String website) { this.website = website; }
+
+    public boolean isVerification() { return verification; }
+
+    public void setVerification(boolean verification) { this.verification = verification; }
+
+    public String getAdvanceNoticeWindow() { return advanceNoticeWindow; }
+
+    public void setAdvanceNoticeWindow(String advanceNoticeWindow) { this.advanceNoticeWindow = advanceNoticeWindow; }
+
+    public String getLogo() { return logo; }
+
+    public void setLogo(String logo) { this.logo = logo; }
 
 }
