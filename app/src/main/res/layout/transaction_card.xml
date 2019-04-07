@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/transaction_card_view"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    card_view:cardCornerRadius="5dp"
+    android:layout_height="220dp"
+    card_view:cardCornerRadius="4dp"
     android:layout_margin="5dp">
 
 
@@ -16,10 +16,10 @@
         <TextView
             android:id="@+id/category"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="23dp"
             android:text="contact det"
             android:gravity="center_vertical"
-            android:textSize="14dp"/>
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/orgName"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:gravity="center_vertical"
-            android:textSize="10dp"
+            android:textSize="17dp"
             android:layout_below="@id/category"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:gravity="center_vertical"
-            android:textSize="10dp"
+            android:textSize="17dp"
             android:layout_below="@id/orgName"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:gravity="center_vertical"
-            android:textSize="10dp"
+            android:textSize="17dp"
             android:layout_below="@id/donationInfo"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:gravity="center_vertical"
-            android:textSize="10dp"
+            android:textSize="17dp"
             android:layout_below="@id/location"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:gravity="center_vertical"
-            android:textSize="10dp"
+            android:textSize="17dp"
             android:layout_below="@id/time"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>
