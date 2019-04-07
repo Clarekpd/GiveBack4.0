@@ -78,6 +78,14 @@ public class TransactionRecordAdapter extends RecyclerView.Adapter<TransactionRe
         categoryText.setText(record.getCategory());
         TextView orgNameText = (TextView) thisCardView.findViewById(R.id.orgName);
         orgNameText.setText(record.getOrgName());
+        TextView donationInfoText = (TextView) thisCardView.findViewById(R.id.donationInfo);
+        donationInfoText.setText(record.getDonation());
+        TextView locationText = (TextView) thisCardView.findViewById(R.id.location);
+        locationText.setText(record.getLocation());
+        TextView timeText = (TextView) thisCardView.findViewById(R.id.time);
+        timeText.setText(record.getTime());
+        TextView tagText = (TextView) thisCardView.findViewById(R.id.tag);
+        tagText.setText(record.getTag());
     }
 
     @Override

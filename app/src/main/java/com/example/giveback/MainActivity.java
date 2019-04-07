@@ -47,15 +47,15 @@ import java.util.ArrayList;
 
         ArrayList<TransactionRecord> data = new ArrayList<>();
 
-        data.add(new TransactionRecord("food", "FeedMe"));
-        data.add(new TransactionRecord("clothes", "ClothMe"));
-        data.add(new TransactionRecord("animals", "AnimalMe"));
-        data.add(new TransactionRecord("food", "FeedMe2"));
-        data.add(new TransactionRecord("clothes", "ClothMe2"));
-        data.add(new TransactionRecord("animals", "AnimalMe2"));
-        data.add(new TransactionRecord("food", "FeedMe3"));
-        data.add(new TransactionRecord("clothes", "ClothMe3"));
-        data.add(new TransactionRecord("animals", "AnimalMe3"));
+        data.add(new TransactionRecord("food", "FeedMe","non- perishable goods","7779 Trucker Dr N, Austin, Tx","7-9:30 Tuesday Sep. 3","under the tree"));
+        data.add(new TransactionRecord("clothes", "ClothMe","covered in goo","in my ufo","space time or Earth time","The password is 1234goose"));
+        data.add(new TransactionRecord("animals", "AnimalMe","It is a live goose","my barnyard","5'o clock","I have a moat"));
+        data.add(new TransactionRecord("food", "FeedMe2","I have extra asparagus","At my asparagus farm","8 P.M.","You can just ignore the asparagus"));
+        data.add(new TransactionRecord("clothes", "ClothMe2","These clothes aren't covered in goo","Roswell, New Mexico","Midnight","We're 100% human"));
+        data.add(new TransactionRecord("animals", "AnimalMe2","It's not cows","My milk farm","1 A.M.","They are live cows"));
+        data.add(new TransactionRecord("food", "FeedMe3","Soup, other non-perishable items","Soup factory","3'o clock","vvvvvvvvv"));
+        data.add(new TransactionRecord("clothes", "ClothMe3","vvvvvvvvvvv","xxxxxxxxxxxxxx","aaaaaaaaaaaaa","0000000000000"));
+        data.add(new TransactionRecord("animals", "AnimalMe3","xxxxxxxxxvvvvvvviii","7uiugoag","aigi","guiugh"));
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rec_view);

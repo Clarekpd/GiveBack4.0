@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/transaction_card_view"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    card_view:cardCornerRadius="4dp"
+    android:layout_height="150dp"
+    card_view:cardCornerRadius="5dp"
     android:layout_margin="5dp">
 
 
@@ -31,6 +31,54 @@
             android:layout_below="@id/category"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/donationInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:gravity="center_vertical"
+            android:textSize="10dp"
+            android:layout_below="@id/orgName"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:gravity="center_vertical"
+            android:textSize="10dp"
+            android:layout_below="@id/donationInfo"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:gravity="center_vertical"
+            android:textSize="10dp"
+            android:layout_below="@id/location"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:gravity="center_vertical"
+            android:textSize="10dp"
+            android:layout_below="@id/time"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"/>
+
+
+
+
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>
