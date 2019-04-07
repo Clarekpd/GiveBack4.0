@@ -18,12 +18,12 @@ public class OrganizationRecord {
 
 
     public OrganizationRecord(String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo){
-        this.category = category;
+        this.acceptedCategories = acceptedCategories;
         this.orgName = orgName;
-        this.donation = donationInfo;
-        this.location = location;
-        this.time = time;
-        this.tag = tag;
+        this.login = login;
+        this.id = id;
+        this.pickUpRegions = pickUpRegions;
+        this.pickUpHours = pickUpHours;
         this.contactInfo = contactInfo;
         this.orgDescription = orgDescription;
         this.acceptedItems = acceptedItems;

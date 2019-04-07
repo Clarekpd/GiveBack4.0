@@ -1,6 +1,6 @@
 package com.example.giveback;
 
-public class TransactionRecord {
+public class DonorRecord {
     private String donorName;
     private String address;
     private String contactInfo;
@@ -9,9 +9,9 @@ public class TransactionRecord {
     private int numberOfItems;
 
 
-    public TransactionRecord(String donorName, String address, String contactInfo, String login, String id, int numberOfItems){
+    public DonorRecord(String donorName, String address, String contactInfo, String login, String id, int numberOfItems){
         this.donorName = donorName;
-        this.orgName = address;
+        this.address = address;
         this.contactInfo = contactInfo;
         this.login = login;
         this.id = id;
