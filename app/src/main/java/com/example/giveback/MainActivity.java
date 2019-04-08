@@ -45,6 +45,12 @@ import java.util.ArrayList;
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        ////String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo
+        //org record
+        OrganizationRecord orgRecord = new OrganizationRecord("food, blankets, clothing, hygiene products", "Are You Hungry", "R U Hungry", "1", "Within 50 miles of Eden Praire", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info");
+
+
         ArrayList<TransactionRecord> data = new ArrayList<>();
 
         data.add(new TransactionRecord("food", "FeedMe","non- perishable goods","7779 Trucker Dr N, Austin, Tx","7-9:30 Tuesday Sep. 3","under the tree"));
