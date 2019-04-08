@@ -57,6 +57,18 @@ import java.util.ArrayList;
         data.add(new TransactionRecord("clothes", "ClothMe3","vvvvvvvvvvv","xxxxxxxxxxxxxx","aaaaaaaaaaaaa","0000000000000"));
         data.add(new TransactionRecord("animals", "AnimalMe3","xxxxxxxxxvvvvvvviii","7uiugoag","aigi","guiugh"));
 
+        ArrayList<DonorRecord> data = new ArrayList<>();
+
+        data.add(new DonorRecord("a","k","u","e","o",1));
+        data.add(new DonorRecord("b","l","v","f","p",2));
+        data.add(new DonorRecord("c","m","w","g","q",3));
+        data.add(new DonorRecord("d","n","x","h","r",4));
+        data.add(new DonorRecord("e","o","y","i","s",5));
+        data.add(new DonorRecord("f","p","z","j","t",6));
+        data.add(new DonorRecord("g","q","a","k","u",7));
+        data.add(new DonorRecord("h","r","b","l","v",8));
+        data.add(new DonorRecord("i","s","c","m","w",9));
+        data.add(new DonorRecord("j","t","d","n","x",10));
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rec_view);
         // GridLayoutManager is responsible for measuring and positioning item views within a RecyclerView
@@ -67,6 +79,8 @@ import java.util.ArrayList;
         // Don't change the size of the content
         recyclerView.setHasFixedSize(true);
         TransactionRecordAdapter adapter = new TransactionRecordAdapter(getApplicationContext(), 10, data);
+        recyclerView.setHasFixedSize(true);
+        DonorRecordAdapter adapter = new DonorRecordAdapter(getApplicationContext(), 10, data);
 
         recyclerView.setAdapter(adapter);
     }
@@ -110,10 +124,11 @@ import java.util.ArrayList;
         int id = item.getItemId();
 
         if (id == R.id.nav_pending_conformation) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_pending_pickup) {
 
         } else if (id == R.id.nav_past_pickups) {
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
