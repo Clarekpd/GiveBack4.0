@@ -80,7 +80,7 @@ import java.util.ArrayList;
         recyclerView.setHasFixedSize(true);
         TransactionRecordAdapter adapter = new TransactionRecordAdapter(getApplicationContext(), 10, data);
         recyclerView.setHasFixedSize(true);
-        //DonorRecordAdapter adapter = new DonorRecordAdapter(getApplicationContext(), 10, data);
+        // TODO: DonorRecordAdapter adapter = new DonorRecordAdapter(getApplicationContext(), 10, data);
 
         recyclerView.setAdapter(adapter);
     }
