@@ -5,15 +5,15 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_pending_conformation"
+            android:icon="@drawable/ic_menu_pending_conformation"
             android:title="Pending Conformation" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_pending_pickup"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Pending Pickup" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_past_pickups"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Past Pickups" />
     </group>
