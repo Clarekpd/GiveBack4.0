@@ -2,7 +2,7 @@ package com.example.giveback;
 
 public class OrganizationRecord {
     private String acceptedCategories;
-    private String orgName;
+    private String orgNameOfficial;
     private String login;
     private String id;
     private String pickUpRegions;
@@ -11,15 +11,15 @@ public class OrganizationRecord {
     private String orgDescription;
     private String acceptedItems;
     private String website;
-    private boolean verification;
+    private String verification;
     private String advanceNoticeWindow;
     private String logo;
 
 
 
-    public OrganizationRecord(String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo){
+    public OrganizationRecord(String acceptedCategories, String orgNameOfficial, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, String verification, String advanceNoticeWindow, String logo){
         this.acceptedCategories = acceptedCategories;
-        this.orgName = orgName;
+        this.orgNameOfficial = orgNameOfficial;
         this.login = login;
         this.id = id;
         this.pickUpRegions = pickUpRegions;
@@ -36,6 +36,10 @@ public class OrganizationRecord {
     public String getAcceptedCategories() { return acceptedCategories; }
 
     public void setAcceptedCategories(String acceptedCategories) { this.acceptedCategories = acceptedCategories; }
+
+    public String getOrgNameOfficial() { return orgNameOfficial; }
+
+    public void setOrgNameOfficial(String orgNameOfficial) { this.orgNameOfficial = orgNameOfficial; }
 
     public String getLogin() { return login; }
 
@@ -69,9 +73,9 @@ public class OrganizationRecord {
 
     public void setWebsite(String website) { this.website = website; }
 
-    public boolean isVerification() { return verification; }
+    public String getVerification() { return verification; }
 
-    public void setVerification(boolean verification) { this.verification = verification; }
+    public void setVerification(String verification) { this.verification = verification; }
 
     public String getAdvanceNoticeWindow() { return advanceNoticeWindow; }
 
