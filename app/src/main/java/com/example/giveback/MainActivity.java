@@ -45,6 +45,12 @@ import java.util.ArrayList;
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        ////String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo
+        //org record
+        OrganizationRecord orgRecord = new OrganizationRecord("food, blankets, clothing, hygiene products", "Are You Hungry", "R U Hungry", "1", "Within 50 miles of Eden Praire", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info");
+
+
         ArrayList<TransactionRecord> data = new ArrayList<>();
 
         data.add(new TransactionRecord("food", "FeedMe","non- perishable goods","7779 Trucker Dr N, Austin, Tx","7-9:30 Tuesday Sep. 3","under the tree"));
@@ -57,6 +63,18 @@ import java.util.ArrayList;
         data.add(new TransactionRecord("clothes", "ClothMe3","vvvvvvvvvvv","xxxxxxxxxxxxxx","aaaaaaaaaaaaa","0000000000000"));
         data.add(new TransactionRecord("animals", "AnimalMe3","xxxxxxxxxvvvvvvviii","7uiugoag","aigi","guiugh"));
 
+        ArrayList<DonorRecord> chris = new ArrayList<>();
+
+        chris.add(new DonorRecord("a","k","u","e","o",1));
+        chris.add(new DonorRecord("b","l","v","f","p",2));
+        chris.add(new DonorRecord("c","m","w","g","q",3));
+        chris.add(new DonorRecord("d","n","x","h","r",4));
+        chris.add(new DonorRecord("e","o","y","i","s",5));
+        chris.add(new DonorRecord("f","p","z","j","t",6));
+        chris.add(new DonorRecord("g","q","a","k","u",7));
+        chris.add(new DonorRecord("h","r","b","l","v",8));
+        chris.add(new DonorRecord("i","s","c","m","w",9));
+        chris.add(new DonorRecord("j","t","d","n","x",10));
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rec_view);
         // GridLayoutManager is responsible for measuring and positioning item views within a RecyclerView
@@ -67,6 +85,8 @@ import java.util.ArrayList;
         // Don't change the size of the content
         recyclerView.setHasFixedSize(true);
         TransactionRecordAdapter adapter = new TransactionRecordAdapter(getApplicationContext(), 10, data);
+        recyclerView.setHasFixedSize(true);
+        // TODO: DonorRecordAdapter adapter = new DonorRecordAdapter(getApplicationContext(), 10, data);
 
         recyclerView.setAdapter(adapter);
     }
@@ -110,10 +130,11 @@ import java.util.ArrayList;
         int id = item.getItemId();
 
         if (id == R.id.nav_pending_conformation) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_pending_pickup) {
 
         } else if (id == R.id.nav_past_pickups) {
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
