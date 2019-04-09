@@ -82,11 +82,11 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
         TextView orgNameOfficialText = (TextView) thisCardView.findViewById(R.id.orgNameOfficial);
         orgNameOfficialText.setText(record.getOrgNameOfficial());
 
-        TextView loginText = (TextView) thisCardView.findViewById(R.id.login);
-        loginText.setText(record.getLogin());
+        TextView loginText = (TextView) thisCardView.findViewById(R.id.loginOrg);
+        loginText.setText(record.getLoginOrg());
 
-        TextView idText = (TextView) thisCardView.findViewById(R.id.id);
-        idText.setText(record.getId());
+        TextView idText = (TextView) thisCardView.findViewById(R.id.idOrg);
+        idText.setText(record.getIdOrg());
 
         TextView pickUpRegionsText = (TextView) thisCardView.findViewById(R.id.pickUpRegions);
         pickUpRegionsText.setText(record.getPickUpRegions());
@@ -94,8 +94,8 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
         TextView pickUpHoursText = (TextView) thisCardView.findViewById(R.id.pickUpHours);
         pickUpHoursText.setText(record.getPickUpHours());
 
-        TextView contactInfoText = (TextView) thisCardView.findViewById(R.id.contactInfo);
-        contactInfoText.setText(record.getContactInfo());
+        TextView contactInfoText = (TextView) thisCardView.findViewById(R.id.contactInfoOrg);
+        contactInfoText.setText(record.getContactInfoOrg());
 
         TextView orgDescriptionText = (TextView) thisCardView.findViewById(R.id.orgDescription);
         orgDescriptionText.setText(record.getOrgDescription());

@@ -3,11 +3,11 @@ package com.example.giveback;
 public class OrganizationRecord {
     private String acceptedCategories;
     private String orgNameOfficial;
-    private String login;
-    private String id;
+    private String loginOrg;
+    private String idOrg;
     private String pickUpRegions;
     private String pickUpHours;
-    private String contactInfo;
+    private String contactInfoOrg;
     private String orgDescription;
     private String acceptedItems;
     private String website;
@@ -17,14 +17,14 @@ public class OrganizationRecord {
 
 
 
-    public OrganizationRecord(String acceptedCategories, String orgNameOfficial, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, String verification, String advanceNoticeWindow, String logo){
+    public OrganizationRecord(String acceptedCategories, String orgNameOfficial, String loginOrg, String idOrg, String pickUpRegions, String pickUpHours, String contactInfoOrg, String orgDescription, String acceptedItems, String website, String verification, String advanceNoticeWindow, String logo){
         this.acceptedCategories = acceptedCategories;
         this.orgNameOfficial = orgNameOfficial;
-        this.login = login;
-        this.id = id;
+        this.loginOrg = loginOrg;
+        this.idOrg = idOrg;
         this.pickUpRegions = pickUpRegions;
         this.pickUpHours = pickUpHours;
-        this.contactInfo = contactInfo;
+        this.contactInfoOrg = contactInfoOrg;
         this.orgDescription = orgDescription;
         this.acceptedItems = acceptedItems;
         this.website = website;
@@ -41,13 +41,13 @@ public class OrganizationRecord {
 
     public void setOrgNameOfficial(String orgNameOfficial) { this.orgNameOfficial = orgNameOfficial; }
 
-    public String getLogin() { return login; }
+    public String getLoginOrg() { return loginOrg; }
 
-    public void setLogin(String login) { this.login = login; }
+    public void setLoginOrg(String loginOrg) { this.loginOrg = loginOrg; }
 
-    public String getId() { return id; }
+    public String getIdOrg() { return idOrg; }
 
-    public void setId(String id) { this.id = id; }
+    public void setIdOrg(String idOrg) { this.idOrg = idOrg; }
 
     public String getPickUpRegions() { return pickUpRegions; }
 
@@ -57,9 +57,9 @@ public class OrganizationRecord {
 
     public void setPickUpHours(String pickUpHours) { this.pickUpHours = pickUpHours; }
 
-    public String getContactInfo() { return contactInfo; }
+    public String getContactInfoOrg() { return contactInfoOrg; }
 
-    public void setContactInfo(String contactInfo) { this.contactInfo = contactInfo; }
+    public void setContactInfoOrg(String contactInfoOrg) { this.contactInfoOrg = contactInfoOrg; }
 
     public String getOrgDescription() { return orgDescription; }
 

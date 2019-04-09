@@ -33,7 +33,7 @@
             android:layout_marginLeft="5dp"/>
 
         <TextView
-            android:id="@+id/login"
+            android:id="@+id/loginOrg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"
@@ -44,13 +44,13 @@
             android:layout_marginLeft="5dp"/>
 
         <TextView
-            android:id="@+id/id"
+            android:id="@+id/idOrg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"
             android:gravity="center_vertical"
             android:textSize="17dp"
-            android:layout_below="@id/login"
+            android:layout_below="@id/loginOrg"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>
 
@@ -61,7 +61,7 @@
             android:text="Name"
             android:gravity="center_vertical"
             android:textSize="17dp"
-            android:layout_below="@id/id"
+            android:layout_below="@id/idOrg"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>
 
@@ -77,7 +77,7 @@
             android:layout_marginLeft="5dp"/>
 
         <TextView
-            android:id="@+id/contactInfo"
+            android:id="@+id/contactInfoOrg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"
@@ -94,7 +94,7 @@
             android:text="Name"
             android:gravity="center_vertical"
             android:textSize="17dp"
-            android:layout_below="@id/contactInfo"
+            android:layout_below="@id/contactInfoOrg"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>
 
