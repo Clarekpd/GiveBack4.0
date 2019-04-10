@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class TransactionRecordAdapter extends RecyclerView.Adapter<TransactionRecordAdapter.TransactionViewHolder> {
@@ -36,7 +34,7 @@ public class TransactionRecordAdapter extends RecyclerView.Adapter<TransactionRe
 
     }
 
-    public TransactionRecordAdapter(Context con, int number, ArrayList<TransactionRecord> arrList) {
+    public TransactionRecordAdapter(Context con, int number, ArrayList<OrganizationRecord> arrList) {
 
         context = con;
         data = arrList;

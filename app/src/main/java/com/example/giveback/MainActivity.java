@@ -48,7 +48,9 @@ import java.util.ArrayList;
 
         ////String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo
         //org record
-        OrganizationRecord orgRecord = new OrganizationRecord("food, blankets, clothing, hygiene products", "Are You Hungry", "R U Hungry", "1", "Within 50 miles of Eden Praire", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info");
+
+        ArrayList<OrganizationRecord> orgRecord = new ArrayList<>();
+        orgRecord.add(new OrganizationRecord(("food, blankets, clothing, and hygiene products","Are You Hungry", "R U Hungry", 1, "Within 50 miles of Eden Praire", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
 
 
         ArrayList<TransactionRecord> data = new ArrayList<>();
@@ -84,11 +86,14 @@ import java.util.ArrayList;
 
         // Don't change the size of the content
         recyclerView.setHasFixedSize(true);
-        TransactionRecordAdapter adapter = new TransactionRecordAdapter(getApplicationContext(), 10, data);
         recyclerView.setHasFixedSize(true);
-        // TODO: DonorRecordAdapter adapter = new DonorRecordAdapter(getApplicationContext(), 10, data);
+        DonorRecordAdapter adapter2 = new DonorRecordAdapter(getApplicationContext(), 10, chris);
+        OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, orgRecord);
+        TransactionRecordAdapter adapter = new TransactionRecordAdapter(getApplicationContext(), 9, data);
 
         recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter1);
+        recyclerView.setAdapter(adapter2);
     }
 
     @Override
