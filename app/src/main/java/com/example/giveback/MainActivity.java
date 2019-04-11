@@ -49,8 +49,8 @@ import java.util.ArrayList;
         ////String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo
         //org record
 
-        ArrayList<OrganizationRecord> orgRecord = new ArrayList<>();
-        orgRecord.add(new OrganizationRecord(("food, blankets, clothing, and hygiene products","Are You Hungry", "R U Hungry", 1, "Within 50 miles of Eden Praire", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
+        ArrayList<OrganizationRecord> chris = new ArrayList<>();
+        chris.add(new OrganizationRecord("food, blankets, clothing, and hygiene products","Are You Hungry", "R U Hungry", 1, "Within 50 miles of Eden Praire", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
 
 
         ArrayList<TransactionRecord> data = new ArrayList<>();
@@ -65,18 +65,18 @@ import java.util.ArrayList;
         data.add(new TransactionRecord("clothes", "ClothMe3","vvvvvvvvvvv","xxxxxxxxxxxxxx","aaaaaaaaaaaaa","0000000000000"));
         data.add(new TransactionRecord("animals", "AnimalMe3","xxxxxxxxxvvvvvvviii","7uiugoag","aigi","guiugh"));
 
-        ArrayList<DonorRecord> chris = new ArrayList<>();
+        ArrayList<DonorRecord> bob = new ArrayList<>();
 
-        chris.add(new DonorRecord("a","k","u","e","o",1));
-        chris.add(new DonorRecord("b","l","v","f","p",2));
-        chris.add(new DonorRecord("c","m","w","g","q",3));
-        chris.add(new DonorRecord("d","n","x","h","r",4));
-        chris.add(new DonorRecord("e","o","y","i","s",5));
-        chris.add(new DonorRecord("f","p","z","j","t",6));
-        chris.add(new DonorRecord("g","q","a","k","u",7));
-        chris.add(new DonorRecord("h","r","b","l","v",8));
-        chris.add(new DonorRecord("i","s","c","m","w",9));
-        chris.add(new DonorRecord("j","t","d","n","x",10));
+        bob.add(new DonorRecord("a","k","u","e","o",1));
+        bob.add(new DonorRecord("b","l","v","f","p",2));
+        bob.add(new DonorRecord("c","m","w","g","q",3));
+        bob.add(new DonorRecord("d","n","x","h","r",4));
+        bob.add(new DonorRecord("e","o","y","i","s",5));
+        bob.add(new DonorRecord("f","p","z","j","t",6));
+        bob.add(new DonorRecord("g","q","a","k","u",7));
+        bob.add(new DonorRecord("h","r","b","l","v",8));
+        bob.add(new DonorRecord("i","s","c","m","w",9));
+        bob.add(new DonorRecord("j","t","d","n","x",10));
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rec_view);
         // GridLayoutManager is responsible for measuring and positioning item views within a RecyclerView
@@ -87,8 +87,8 @@ import java.util.ArrayList;
         // Don't change the size of the content
         recyclerView.setHasFixedSize(true);
         recyclerView.setHasFixedSize(true);
-        DonorRecordAdapter adapter2 = new DonorRecordAdapter(getApplicationContext(), 10, chris);
-        OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, orgRecord);
+        DonorRecordAdapter adapter2 = new DonorRecordAdapter(getApplicationContext(), 10, bob);
+        OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, chris);
         TransactionRecordAdapter adapter = new TransactionRecordAdapter(getApplicationContext(), 9, data);
 
         recyclerView.setAdapter(adapter);
