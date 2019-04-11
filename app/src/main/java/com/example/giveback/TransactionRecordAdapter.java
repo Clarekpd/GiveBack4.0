@@ -34,7 +34,7 @@ public class TransactionRecordAdapter extends RecyclerView.Adapter<TransactionRe
 
     }
 
-    public TransactionRecordAdapter(Context con, int number, ArrayList<OrganizationRecord> arrList) {
+    public TransactionRecordAdapter(Context con, int number, ArrayList<TransactionRecord> arrList) {
 
         context = con;
         data = arrList;
