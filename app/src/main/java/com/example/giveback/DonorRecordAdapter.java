@@ -91,7 +91,7 @@ public class DonorRecordAdapter extends RecyclerView.Adapter<DonorRecordAdapter.
         timeText.setText(record.getIdDonor());
 
         TextView tagText = (TextView) thisCardView.findViewById(R.id.numberOfItems);
-        tagText.setText(record.getNumberOfItems());
+        tagText.setText(Integer.valueOf(record.getNumberOfItems()).toString());
     }
 
     @Override

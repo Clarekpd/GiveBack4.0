@@ -107,7 +107,7 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
         websiteText.setText(record.getWebsite());
 
         TextView verificationText = (TextView) thisCardView.findViewById(R.id.verification);
-        verificationText.setText(record.getVerification());
+        verificationText.setText(Boolean.valueOf(record.getVerification()).toString());
 
         TextView advanceNoticeWindowText = (TextView) thisCardView.findViewById(R.id.advanceNoticeWindow);
         advanceNoticeWindowText.setText(record.getAdvanceNoticeWindow());
