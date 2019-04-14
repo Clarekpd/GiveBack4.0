@@ -14,12 +14,21 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/acceptedCategoriesLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Accepted Categories:"
+            android:gravity="center_vertical"
+            android:textSize="17dp"/>
+
+        <TextView
             android:id="@+id/acceptedCategories"
             android:layout_width="match_parent"
             android:layout_height="23dp"
             android:text="contact det"
+            android:layout_below="@id/acceptedCategoriesLabel"
             android:gravity="center_vertical"
-            android:textSize="20dp"/>
+            android:textSize="15dp"/>
 
         <TextView
             android:id="@+id/orgNameOfficial"
