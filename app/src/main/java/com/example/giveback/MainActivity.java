@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.giveback.fragments.OrganizationRecyclerFragment;
 import com.example.giveback.fragments.TransactionRecyclerFragment;
 
 import java.util.ArrayList;
@@ -57,7 +58,7 @@ import java.util.List;
         //org record
 
         ArrayList<OrganizationRecord> chris = new ArrayList<>();
-        chris.add(new OrganizationRecord("food, blankets, clothing, and hygiene products","Are You Hungry", "R U Hungry", 1, "Within 50 miles of Eden Prairie", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
+        chris.add(new OrganizationRecord("food, blankets, clothing, and hygiene products","Are You Hungry", "R U Hungry", "1", "Within 50 miles of Eden Prairie", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
 
 
 
@@ -135,6 +136,10 @@ import java.util.List;
             fragment = new TransactionRecyclerFragment();
             ((TransactionRecyclerFragment) fragment).setData(getPickupHistoryRecords());
             ((TransactionRecyclerFragment) fragment).setTitle("Pickup History");
+        }else if (id == R.id.nav_org_menu) {
+            fragment = new OrganizationRecyclerFragment();
+            ((OrganizationRecyclerFragment) fragment).setOrgRecords(getOrganizationRecords());
+            ((OrganizationRecyclerFragment) fragment).setTitle("My Information");
         }
         //TODO: add Organization Info navigation, New type of Fragment and layout for it, passing in org info
 
@@ -201,5 +206,12 @@ import java.util.List;
          data.add(new TransactionRecord("happy", "FeedMe","candy","Park behind the cub foods","7-9:30 Tuesday Sep. 3","under the tree"));
 
          return data;
+     }
+     private ArrayList<OrganizationRecord> getOrganizationRecords() {
+         ArrayList<OrganizationRecord> orgRecords = new ArrayList<>();
+
+         orgRecords.add(new OrganizationRecord("food, blankets, clothing, and hygiene products","Are You Hungry", "R U Hungry", "1", "Within 50 miles of Eden Prairie", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
+
+         return orgRecords;
      }
 }

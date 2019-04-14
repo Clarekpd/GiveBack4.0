@@ -17,21 +17,21 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
 
 
     private Context context;
-    private  ArrayList<OrganizationRecord> chris;
+    private  ArrayList<OrganizationRecord> orgRecords;
     private int numItems;
 
     public class OrganizationViewHolder extends RecyclerView.ViewHolder {
 
 
         // Create a TextView variable called listItemNumberView
-        CardView cardView = (CardView) itemView.findViewById(R.id.transaction_card_view);
+        CardView cardView = (CardView) itemView.findViewById(R.id.organization_card_view);
 
 
         // Create a constructor for NewsViewHolder that accepts a View called itemView as a parameter
 
         public OrganizationViewHolder(View itemView) {
             super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.transaction_card_view);
+            cardView = (CardView) itemView.findViewById(R.id.organization_card_view);
         }
 
     }
@@ -39,7 +39,7 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
     public OrganizationRecordAdapter(Context con, int number, ArrayList<OrganizationRecord> arrList) {
 
         context = con;
-        chris = arrList;
+        orgRecords = arrList;
         numItems = number;
 
     }
@@ -52,7 +52,7 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
     @Override
     public OrganizationViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         Context context = viewGroup.getContext();
-        int layoutIdForListItem = R.layout.transaction_card;
+        int layoutIdForListItem = R.layout.organization_card;
 
         // Inflate our new item view using a LayoutInflater. It takes the ID of layout in xml.
         // Then --> inflates or converts this collection of view groups and views.
@@ -71,7 +71,7 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
     public void onBindViewHolder(@NonNull OrganizationViewHolder organizationViewHolder, int i) {
         // Get the data model based on position
 
-        OrganizationRecord record = chris.get(i);
+        OrganizationRecord record = orgRecords.get(i);
         // Set item views based on your views and data model
         CardView thisCardView = organizationViewHolder.cardView;
 
@@ -119,7 +119,7 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
 
     @Override
     public int getItemCount() {
-        return chris.size();
+        return orgRecords.size();
     }
 
 

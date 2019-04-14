@@ -4,7 +4,7 @@ public class OrganizationRecord {
     private String acceptedCategories;
     private String orgNameOfficial;
     private String loginOrg;
-    private int idOrg;
+    private String idOrg;
     private String pickUpRegions;
     private String pickUpHours;
     private String contactInfoOrg;
@@ -17,7 +17,7 @@ public class OrganizationRecord {
 
 
 
-    public OrganizationRecord(String acceptedCategories, String orgNameOfficial, String loginOrg, int idOrg, String pickUpRegions, String pickUpHours, String contactInfoOrg, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo){
+    public OrganizationRecord(String acceptedCategories, String orgNameOfficial, String loginOrg, String idOrg, String pickUpRegions, String pickUpHours, String contactInfoOrg, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo){
         this.acceptedCategories = acceptedCategories;
         this.orgNameOfficial = orgNameOfficial;
         this.loginOrg = loginOrg;
@@ -45,9 +45,9 @@ public class OrganizationRecord {
 
     public void setLoginOrg(String loginOrg) { this.loginOrg = loginOrg; }
 
-    public int getIdOrg() { return idOrg; }
+    public String getIdOrg() { return idOrg; }
 
-    public void setIdOrg(int idOrg) { this.idOrg = idOrg; }
+    public void setIdOrg(String idOrg) { this.idOrg = idOrg; }
 
     public String getPickUpRegions() { return pickUpRegions; }
 

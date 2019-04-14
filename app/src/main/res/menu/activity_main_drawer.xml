@@ -16,5 +16,9 @@
             android:id="@+id/nav_past_pickups"
             android:icon="@drawable/ic_menu_past_pickups"
             android:title="Past Pickups" />
+        <item
+            android:id="@+id/nav_org_menu"
+            android:icon="@drawable/ic_menu_past_pickups"
+            android:title="My Information" />
     </group>
 </menu>

@@ -23,7 +23,7 @@ import java.util.ArrayList;
  */
 public class OrganizationRecyclerFragment extends Fragment {
 
-    private ArrayList<OrganizationRecord> chris;
+    private ArrayList<OrganizationRecord> orgRecords;
     private String title;
 
 
@@ -38,7 +38,7 @@ public class OrganizationRecyclerFragment extends Fragment {
 
         // Don't change the size of the content
         recyclerView.setHasFixedSize(true);
-        OrganizationRecordAdapter adapter = new OrganizationRecordAdapter(c, 9, chris);
+        OrganizationRecordAdapter adapter = new OrganizationRecordAdapter(c, 9, orgRecords);
         recyclerView.setAdapter(adapter);
 
         return view;
@@ -53,13 +53,11 @@ public class OrganizationRecyclerFragment extends Fragment {
     }
 
 
-    public ArrayList<OrganizationRecord> getChris() {
-        return chris;
+    public ArrayList<OrganizationRecord> getOrgRecords() {
+        return orgRecords;
     }
 
-    public void setChris(ArrayList<OrganizationRecord> data) {
-        this.chris = chris;
-    }
+    public void setOrgRecords(ArrayList<OrganizationRecord> orgRecords) { this.orgRecords = orgRecords; }
 
     public String getTitle() {
         return title;
