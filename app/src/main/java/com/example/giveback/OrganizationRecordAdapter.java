@@ -82,11 +82,11 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
         TextView orgNameOfficialText = (TextView) thisCardView.findViewById(R.id.orgNameOfficial);
         orgNameOfficialText.setText(record.getOrgNameOfficial());
 
-        TextView loginText = (TextView) thisCardView.findViewById(R.id.loginOrg);
-        loginText.setText(record.getLoginOrg());
+        //TextView loginText = (TextView) thisCardView.findViewById(R.id.loginOrg);
+        //loginText.setText(record.getLoginOrg());
 
-        TextView idText = (TextView) thisCardView.findViewById(R.id.idOrg);
-        idText.setText(record.getIdOrg());
+        //TextView idText = (TextView) thisCardView.findViewById(R.id.idOrg);
+        //idText.setText(record.getIdOrg());
 
         TextView pickUpRegionsText = (TextView) thisCardView.findViewById(R.id.pickUpRegions);
         pickUpRegionsText.setText(record.getPickUpRegions());
@@ -106,8 +106,8 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
         TextView websiteText = (TextView) thisCardView.findViewById(R.id.website);
         websiteText.setText(record.getWebsite());
 
-        TextView verificationText = (TextView) thisCardView.findViewById(R.id.verification);
-        verificationText.setText(Boolean.valueOf(record.getVerification()).toString());
+        //TextView verificationText = (TextView) thisCardView.findViewById(R.id.verification);
+        //verificationText.setText(Boolean.valueOf(record.getVerification()).toString());
 
         TextView advanceNoticeWindowText = (TextView) thisCardView.findViewById(R.id.advanceNoticeWindow);
         advanceNoticeWindowText.setText(record.getAdvanceNoticeWindow());
