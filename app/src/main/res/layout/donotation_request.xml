@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.constraint.VerticalLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         android:layout_marginLeft="5dp"
         android:inputType="text"/>
 
-    <<EditText
+    <EditText
         android:id="@+id/dimensions"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -60,4 +60,4 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
         android:inputType="text"/>
-</android.support.constraint.ConstraintLayout>
+</android.support.constraint.VerticalLayout>
