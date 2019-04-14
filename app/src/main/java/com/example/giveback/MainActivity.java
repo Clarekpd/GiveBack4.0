@@ -17,7 +17,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.giveback.fragments.DonorRecyclerFragment;
 import com.example.giveback.fragments.OrganizationRecyclerFragment;
 import com.example.giveback.fragments.TransactionRecyclerFragment;
 
@@ -55,9 +54,9 @@ import java.util.List;
 
         ArrayList<DonorRecord> bob = new ArrayList<>();
 
-        bob.add(new DonorRecord("Ashley","Chen","u","e","o",1));
-        bob.add(new DonorRecord("Nora","Dixon","v","f","p",2));
-        bob.add(new DonorRecord("Charlotte","Foran","w","g","q",3));
+        bob.add(new DonorRecord("a","k","u","e","o",1));
+        bob.add(new DonorRecord("b","l","v","f","p",2));
+        bob.add(new DonorRecord("c","m","w","g","q",3));
         bob.add(new DonorRecord("d","n","x","h","r",4));
         bob.add(new DonorRecord("e","o","y","i","s",5));
         bob.add(new DonorRecord("f","p","z","j","t",6));
@@ -132,11 +131,7 @@ import java.util.List;
             ((OrganizationRecyclerFragment) fragment).setTitle("My Information");
         }
         //TODO: add Organization Info navigation, New type of Fragment and layout for it, passing in org info
-        else if (id == R.id.nav_donor_menu) {
-            fragment = new DonorRecyclerFragment();
-            ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
-            ((DonorRecyclerFragment) fragment).setTitle("My Information");
-        }
+
 
 
         //replacing the fragment with the one that was clicked on
@@ -204,15 +199,8 @@ import java.util.List;
      private ArrayList<OrganizationRecord> getOrganizationRecords() {
          ArrayList<OrganizationRecord> orgRecords = new ArrayList<>();
 
-         orgRecords.add(new OrganizationRecord("food, blankets, clothing, and hygiene products","Are You Hungry", "R U Hungry", "1", "Within 50 miles of Eden Prairie", "3pm-10pm", "contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
+         orgRecords.add(new OrganizationRecord("food, blankets, clothing, and hygiene products","Are You Hungry", "R U Hungry", "1", "Within 50 miles of Eden Prairie", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
 
          return orgRecords;
-     }
-     private ArrayList<DonorRecord> getDonorRecords() {
-         ArrayList<DonorRecord> donorRecords = new ArrayList<>();
-
-         donorRecords.add(new DonorRecord("Ashley","Chen","u","e","o",1));
-
-         return donorRecords;
      }
 }
