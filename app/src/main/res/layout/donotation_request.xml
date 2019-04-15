@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.VerticalLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/items"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="17sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/items"
+        android:textSize="17sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/dimensions"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/location"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/dimensions"
+        android:textSize="17sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/estimated_weight"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/description"
+        android:textSize="17sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/special_instructions"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/estimated_weight"
+        android:textSize="17sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:inputType="text"/>
+</android.support.constraint.VerticalLayout>

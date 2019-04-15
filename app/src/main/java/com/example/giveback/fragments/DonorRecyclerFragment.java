@@ -23,7 +23,7 @@ import java.util.ArrayList;
  */
 public class DonorRecyclerFragment extends Fragment {
 
-    private ArrayList<DonorRecord> bob;
+    private ArrayList<DonorRecord> donorRecords;
     private String title;
 
 
@@ -38,7 +38,7 @@ public class DonorRecyclerFragment extends Fragment {
 
         // Don't change the size of the content
         recyclerView.setHasFixedSize(true);
-        DonorRecordAdapter adapter = new DonorRecordAdapter(c, 9, bob);
+        DonorRecordAdapter adapter = new DonorRecordAdapter(c, 9, donorRecords);
         recyclerView.setAdapter(adapter);
 
         return view;
@@ -53,9 +53,9 @@ public class DonorRecyclerFragment extends Fragment {
     }
 
 
-    public ArrayList<DonorRecord> getBob() { return bob; }
+    public ArrayList<DonorRecord> getDonorRecords() { return donorRecords; }
 
-    public void setBob(ArrayList<DonorRecord> data) { this.bob = bob; }
+    public void setDonorRecords(ArrayList<DonorRecord> donorRecords) { this.donorRecords = donorRecords; }
 
     public String getTitle() {
         return title;

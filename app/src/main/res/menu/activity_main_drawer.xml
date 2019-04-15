@@ -18,7 +18,15 @@
             android:title="Past Pickups" />
         <item
             android:id="@+id/nav_org_menu"
-            android:icon="@drawable/ic_menu_past_pickups"
-            android:title="My Information" />
+            android:icon="@drawable/ic_menu_org_info"
+            android:title="My Organization Information" />
+        <item
+            android:id="@+id/nav_donor_menu"
+            android:icon="@drawable/ic_menu_donor_information"
+            android:title="My Donor Information" />
+        <item
+            android:id="@+id/nav_donor_request"
+            android:icon="@drawable/ic_menu_donation_request"
+            android:title="Create Donation Request" />
     </group>
 </menu>
