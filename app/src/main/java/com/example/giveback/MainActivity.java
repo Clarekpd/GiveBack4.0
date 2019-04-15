@@ -56,16 +56,16 @@ import java.util.List;
 
         ArrayList<DonorRecord> bob = new ArrayList<>();
 
-        bob.add(new DonorRecord("Ashley","Chen","u","e","o",1));
-        bob.add(new DonorRecord("Nora","Dixon","v","f","p",2));
-        bob.add(new DonorRecord("Charlotte","Foran","w","g","q",3));
-        bob.add(new DonorRecord("d","n","x","h","r",4));
-        bob.add(new DonorRecord("e","o","y","i","s",5));
-        bob.add(new DonorRecord("f","p","z","j","t",6));
-        bob.add(new DonorRecord("g","q","a","k","u",7));
-        bob.add(new DonorRecord("h","r","b","l","v",8));
-        bob.add(new DonorRecord("i","s","c","m","w",9));
-        bob.add(new DonorRecord("j","t","d","n","x",10));
+        bob.add(new DonorRecord("Ash","Czech","ash_czech@gmail.com","e","o",1));
+        bob.add(new DonorRecord("Nora","Barack","v","f","p",2));
+        bob.add(new DonorRecord("Mary","Foran","w","g","q",3));
+        bob.add(new DonorRecord("Joe","Bob","x","h","r",4));
+        bob.add(new DonorRecord("Claire","Clare","y","i","s",5));
+        bob.add(new DonorRecord("Prapthi","Samsonite","z","j","t",6));
+        bob.add(new DonorRecord("Raphael","Solano","a","k","u",7));
+        bob.add(new DonorRecord("Iris","Sirrkay","b","l","v",8));
+        bob.add(new DonorRecord("Ellie","Hurdlehall","c","m","w",9));
+        bob.add(new DonorRecord("Magda","Petra","d","n","x",10));
 
 
         DonorRecordAdapter adapter2 = new DonorRecordAdapter(getApplicationContext(), 10, bob);
