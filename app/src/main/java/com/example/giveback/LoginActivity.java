@@ -1,6 +1,7 @@
 package com.example.giveback;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -50,13 +51,17 @@ public class LoginActivity extends Activity {
                         inputUsername.toString().equals(correctUsernameDonor) &&
                         inputPassword.toString().equals(correctPasswordDonor)) {
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
+
+
                 }else if(selectedOption.getText().toString().equals("organization") &&
                         inputUsername.toString().equals(correctUsernameOrg) &&
                         inputPassword.toString().equals(correctPasswordOrg)) {
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
+                    setContentView(R.layout.activity_main);
+
+
                 }else{
                     Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
-
                 }
 
 
