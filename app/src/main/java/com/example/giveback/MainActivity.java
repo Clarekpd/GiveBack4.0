@@ -190,9 +190,6 @@ import java.util.List;
         data.add(new TransactionRecord("hygiene", "Are You Hungry","30 toothbrushes","On the curb near the street turn for Fairvick and Marbella Rd","4pm Saturday Jun 13","under my tree"));
         data.add(new TransactionRecord("toys", "Toys For Kiddos","4 teddy bears","7428 Blue Haven Rd, 67421","6pm Monday 28 February","On my front steps"));
 
-        ArrayList<DonorRecord> chris = new ArrayList<>();
-
-
         return data;
     }
 
