@@ -153,6 +153,9 @@ import java.util.List;
             fragment = new DonorRecyclerFragment();
             ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
             ((DonorRecyclerFragment) fragment).setTitle("My Information");
+        } else if (id == R.id.nav_donor_request) {
+            fragment = new DonorRecyclerFragment();
+            ((DonorRecyclerFragment) fragment).setTitle("Donation Request");
         }
 
 

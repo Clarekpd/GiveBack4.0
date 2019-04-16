@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.RecyclerView.ViewHolder
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/donation_request"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/itemsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Put items to donate here:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemsLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/numberOfItemsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/items"
+            android:gravity="center_vertical"
+            android:text="Put number of items to be donated here:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/numbersOfItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/numberOfItemsLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/locationLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/numbersOfItems"
+            android:gravity="center_vertical"
+            android:text="Put location here:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/locationLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/dimensionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/location"
+            android:gravity="center_vertical"
+            android:text="Put dimensions of the items here:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/dimensions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dimensionLabel"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/descriptionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/dimensions"
+            android:gravity="center_vertical"
+            android:text="Put a description of the items here:"
+            android:textSize="20sp" />
+
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/estimatedWeightLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/description"
+            android:gravity="center_vertical"
+            android:text="Put the estimated weight of heaviest item here:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/estimatedWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/estimatedWeightLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/specialInstructionsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/estimatedWeight"
+            android:gravity="center_vertical"
+            android:text="Put any special instructions here:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/specialInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/specialInstructionsLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/orgNamesLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/estimatedWeight"
+            android:gravity="center_vertical"
+            android:text="Put in the organization you wish to download to here:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/orgName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orgNamesLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:textSize="17sp" />
+    </RelativeLayout>
+</android.support.v7.widget.RecyclerView.ViewHolder>
