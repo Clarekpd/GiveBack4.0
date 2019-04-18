@@ -1,11 +1,6 @@
  package com.example.giveback;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,13 +12,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.giveback.fragments.DonationRequestFragment;
 import com.example.giveback.fragments.LoginFragment;
 import com.example.giveback.fragments.OrganizationRecyclerFragment;
 import com.example.giveback.fragments.TransactionRecyclerFragment;
 import com.example.giveback.fragments.DonorRecyclerFragment;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
  public class AfterLogin extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -158,7 +154,8 @@ import java.util.List;
             ((DonorRecyclerFragment) fragment).setTitle("My Information");
         } else if (id == R.id.nav_donor_request) {
             fragment = new DonorRecyclerFragment();
-            ((DonorRecyclerFragment) fragment).setTitle("Donation Request");
+            //((DonationRequestFragment) fragment).set(get);
+            ((DonationRequestFragment) fragment).setTitle("Donation Request");
         }
 
 
