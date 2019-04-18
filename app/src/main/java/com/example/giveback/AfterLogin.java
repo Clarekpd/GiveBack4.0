@@ -152,7 +152,7 @@ import java.util.ArrayList;
             ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
             ((DonorRecyclerFragment) fragment).setTitle("My Information");
         } else if (id == R.id.nav_donor_request) {
-            fragment = new DonorRecyclerFragment();
+            fragment = new DonationRequestFragment();
             //((DonationRequestFragment) fragment).set(get);
             ((DonationRequestFragment) fragment).setTitle("Donation Request");
         }

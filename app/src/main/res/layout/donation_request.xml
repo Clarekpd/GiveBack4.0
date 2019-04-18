@@ -146,7 +146,7 @@
             android:id="@+id/orgNamesLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/estimatedWeight"
+            android:layout_below="@id/specialInstructions"
             android:gravity="center_vertical"
             android:text="Put in the organization you wish to download to here:"
             android:textSize="20sp" />
