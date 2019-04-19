@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_pending_conformation"
             android:icon="@drawable/ic_menu_pending_conformation"
-            android:title="Pending Conformation" />
+            android:title="Pending Confirmation" />
         <item
             android:id="@+id/nav_pending_pickup"
             android:icon="@drawable/ic_menu_pending_pickup"
