@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private String correctUsernameOrg = "ou";
     private String correctPasswordOrg = "op";
 
+    private boolean userIsDonor;
+
+    Bundle bundle = new Bundle();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +55,12 @@ public class MainActivity extends AppCompatActivity {
                         inputUsername.getText().toString().equals(correctUsernameDonor) &&
                         inputPassword.getText().toString().equals(correctPasswordDonor)) {
 
+                    userIsDonor = true;
+
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, AfterLogin.class);
+                    bundle.putBoolean("userType", userIsDonor);
+                    intent.putExtras(bundle);
                     startActivity(intent);
 
 
@@ -60,9 +68,14 @@ public class MainActivity extends AppCompatActivity {
                         inputUsername.getText().toString().equals(correctUsernameOrg) &&
                         inputPassword.getText().toString().equals(correctPasswordOrg)) {
 
+                    userIsDonor = false;
+
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, AfterLogin.class);
+                    bundle.putBoolean("userType", userIsDonor);
+                    intent.putExtras(bundle);
                     startActivity(intent);
+
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
