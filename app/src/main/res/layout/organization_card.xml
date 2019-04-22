@@ -16,39 +16,42 @@
         <TextView
             android:id="@+id/OrgNameLabel"
             android:layout_width="match_parent"
-            android:layout_height="23dp"
-            android:text="Organization name"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:textSize="17dp"/>
+            android:text="Organization name"
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/orgNameOfficial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:gravity="center_vertical"
-            android:textSize="17dp"
             android:layout_below="@id/OrgNameLabel"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/acceptedCategoriesLabel"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:text="Accepted Categories:"
             android:layout_below="@id/orgNameOfficial"
             android:gravity="center_vertical"
-            android:textSize="17dp"/>
+            android:text="Accepted Categories:"
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/acceptedCategories"
-            android:layout_width="match_parent"
-            android:layout_height="23dp"
-            android:text="contact det"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/acceptedCategoriesLabel"
+            android:layout_marginLeft="5dp"
             android:gravity="center_vertical"
-            android:textSize="15dp"/>
+            android:text="Name"
+            android:textSize="17dp" />
 
 
         <!--
@@ -78,121 +81,127 @@
             android:id="@+id/PickupRegionLabel"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:text="Pickup Regions: "
             android:layout_below="@id/acceptedCategories"
             android:gravity="center_vertical"
-            android:textSize="17dp"/>
+            android:text="Pickup Regions: "
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
-             <TextView
-                 android:id="@+id/pickUpRegions"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Name"
-                 android:gravity="center_vertical"
-                 android:textSize="17dp"
-                 android:layout_below="@id/PickupRegionLabel"
-                 android:layout_marginTop="10dp"
-                 android:layout_marginLeft="5dp"/>
+        <TextView
+            android:id="@+id/pickUpRegions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/PickupRegionLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/PickUpHoursLabel"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:text="Pickup Hours: "
             android:layout_below="@id/pickUpRegions"
             android:gravity="center_vertical"
-            android:textSize="17dp"/>
+            android:text="Pickup Hours: "
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
-             <TextView
-                 android:id="@+id/pickUpHours"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Name"
-                 android:gravity="center_vertical"
-                 android:textSize="17dp"
-                 android:layout_below="@id/PickUpHoursLabel"
-                 android:layout_marginTop="10dp"
-                 android:layout_marginLeft="5dp"/>
+        <TextView
+            android:id="@+id/pickUpHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/PickUpHoursLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/ContactInfoLabel"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:text="Contact Information: "
             android:layout_below="@id/pickUpHours"
             android:gravity="center_vertical"
-            android:textSize="17dp"/>
+            android:text="Contact Information: "
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
         <TextView
-                 android:id="@+id/contactInfoOrg"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Name"
-                 android:gravity="center_vertical"
-                 android:textSize="17dp"
-                 android:layout_below="@id/ContactInfoLabel"
-                 android:layout_marginTop="10dp"
-                 android:layout_marginLeft="5dp"/>
+            android:id="@+id/contactInfoOrg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ContactInfoLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/OrgDescriptions"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:text="Mission Statement: "
             android:layout_below="@id/contactInfoOrg"
             android:gravity="center_vertical"
-            android:textSize="17dp"/>
+            android:text="Mission Statement: "
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
         <TextView
-                 android:id="@+id/orgDescription"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Name"
-                 android:gravity="center_vertical"
-                 android:textSize="17dp"
-                 android:layout_below="@id/OrgDescriptions"
-                 android:layout_marginTop="10dp"
-                 android:layout_marginLeft="5dp"/>
+            android:id="@+id/orgDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/OrgDescriptions"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/AcceptedItemsLabel"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:text="Accepted Items: "
             android:layout_below="@id/orgDescription"
             android:gravity="center_vertical"
-            android:textSize="17dp"/>
+            android:text="Accepted Items: "
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
         <TextView
-                 android:id="@+id/acceptedItems"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Name"
-                 android:gravity="center_vertical"
-                 android:textSize="17dp"
-                 android:layout_below="@id/AcceptedItemsLabel"
-                 android:layout_marginTop="10dp"
-                 android:layout_marginLeft="5dp"/>
+            android:id="@+id/acceptedItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/AcceptedItemsLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/WebsiteLabel"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:text="Website: "
             android:layout_below="@id/acceptedItems"
             android:gravity="center_vertical"
-            android:textSize="17dp"/>
+            android:text="Website: "
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
         <TextView
-                 android:id="@+id/website"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Name"
-                 android:gravity="center_vertical"
-                 android:textSize="17dp"
-                 android:layout_below="@id/WebsiteLabel"
-                 android:layout_marginTop="10dp"
-                 android:layout_marginLeft="5dp"/>
+            android:id="@+id/website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/WebsiteLabel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textSize="17dp" />
 
          <!--    <TextView
                  android:id="@+id/verification"
@@ -211,21 +220,22 @@
             android:id="@+id/NoticeWindowLabel"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:text="Notice Window: "
             android:layout_below="@id/website"
             android:gravity="center_vertical"
-            android:textSize="17dp"/>
+            android:text="Notice Window: "
+            android:textSize="17dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/advanceNoticeWindow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:gravity="center_vertical"
-            android:textSize="17dp"
             android:layout_below="@id/NoticeWindowLabel"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textSize="17dp" />
         <!--
                 <TextView
                     android:id="@+id/logo"

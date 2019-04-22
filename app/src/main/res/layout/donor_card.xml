@@ -14,12 +14,32 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/donorNameLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Donor Name:"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textSize="17dp"/>
+
+        <TextView
             android:id="@+id/donorName"
             android:layout_width="match_parent"
             android:layout_height="23dp"
             android:text="contact det"
             android:gravity="center_vertical"
+            android:layout_below="@id/donorNameLabel"
             android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/addressLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Address:"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_below="@id/donorName"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/address"
@@ -28,9 +48,18 @@
             android:text="Name"
             android:gravity="center_vertical"
             android:textSize="17dp"
-            android:layout_below="@id/donorName"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/addressLabel"
             android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/contactInfoLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Email:"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_below="@id/address"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/contactInfoDonor"
@@ -39,11 +68,10 @@
             android:text="Name"
             android:gravity="center_vertical"
             android:textSize="17dp"
-            android:layout_below="@id/address"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+            android:layout_below="@id/contactInfoLabel"/>
 
-        <TextView
+<!-- Commenting out the id and login of donor -->
+     <!--   <TextView
             android:id="@+id/loginDonor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,7 +91,17 @@
             android:textSize="17dp"
             android:layout_below="@id/loginDonor"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"/>-->
+
+        <TextView
+            android:id="@+id/numberOfItemsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Number of Items:"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_below="@id/contactInfoDonor"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/numberOfItems"
@@ -72,9 +110,8 @@
             android:text="Name"
             android:gravity="center_vertical"
             android:textSize="17dp"
-            android:layout_below="@id/idDonor"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+            android:layout_below="@id/numberOfItemsLabel"
+            android:layout_marginTop="10dp"/>
 
 
 

@@ -84,11 +84,11 @@ public class DonorRecordAdapter extends RecyclerView.Adapter<DonorRecordAdapter.
         TextView donationInfoText = (TextView) thisCardView.findViewById(R.id.contactInfoDonor);
         donationInfoText.setText(record.getContactInfoDonor());
 
-        TextView locationText = (TextView) thisCardView.findViewById(R.id.loginDonor);
-        locationText.setText(record.getLoginDonor());
+        //TextView locationText = (TextView) thisCardView.findViewById(R.id.loginDonor);
+        //locationText.setText(record.getLoginDonor());
 
-        TextView timeText = (TextView) thisCardView.findViewById(R.id.idDonor);
-        timeText.setText(record.getIdDonor());
+        //TextView timeText = (TextView) thisCardView.findViewById(R.id.idDonor);
+        //timeText.setText(record.getIdDonor());
 
         TextView tagText = (TextView) thisCardView.findViewById(R.id.numberOfItems);
         tagText.setText(Integer.valueOf(record.getNumberOfItems()).toString());
