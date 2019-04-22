@@ -160,6 +160,7 @@ import java.util.ArrayList;
             fragment = new TransactionRecyclerFragment();
             ((TransactionRecyclerFragment) fragment).setData(getPendingPickupRecords());
             ((TransactionRecyclerFragment) fragment).setTitle("Pending Pickup");
+            ((TransactionRecyclerFragment) fragment).setDonor(userType);
         } else if (id == R.id.nav_past_pickups) {
             fragment = new TransactionRecyclerFragment();
             ((TransactionRecyclerFragment) fragment).setData(getPickupHistoryRecords());

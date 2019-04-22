@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/transaction_card_view_org"
+    android:id="@+id/transaction_card_view_donor_pp"
     android:layout_width="match_parent"
     android:layout_height="260dp"
     card_view:cardCornerRadius="4dp"
@@ -15,7 +15,7 @@
         android:layout_height="500dp">
 
         <TextView
-            android:id="@+id/category_pc"
+            android:id="@+id/category_dpp"
             android:layout_width="match_parent"
             android:layout_height="23dp"
             android:gravity="center_vertical"
@@ -23,10 +23,10 @@
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/orgName_pc"
+            android:id="@+id/orgName_dpp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/category_pc"
+            android:layout_below="@id/category_dpp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
@@ -34,10 +34,10 @@
             android:textSize="17dp" />
 
         <TextView
-            android:id="@+id/donationInfo_pc"
+            android:id="@+id/donationInfo_dpp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/orgName_pc"
+            android:layout_below="@id/orgName_dpp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
@@ -45,10 +45,10 @@
             android:textSize="17dp" />
 
         <TextView
-            android:id="@+id/location_pc"
+            android:id="@+id/location_dpp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/donationInfo_pc"
+            android:layout_below="@id/donationInfo_dpp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
@@ -56,10 +56,10 @@
             android:textSize="17dp" />
 
         <TextView
-            android:id="@+id/time_pc"
+            android:id="@+id/time_dpp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/location_pc"
+            android:layout_below="@id/location_dpp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
@@ -67,10 +67,10 @@
             android:textSize="17dp" />
 
         <TextView
-            android:id="@+id/tag_pc"
+            android:id="@+id/tag_dpp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/time_pc"
+            android:layout_below="@id/time_dpp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
@@ -78,26 +78,15 @@
             android:textSize="17dp" />
 
         <Button
-            android:id="@+id/accept"
+            android:id="@+id/cancel_donor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tag_pc"
-            android:layout_marginLeft="170dp"
+            android:layout_below="@id/tag_dpp"
+            android:layout_marginLeft="230dp"
             android:layout_marginTop="10dp"
-            android:text="Accept"
+            android:text="Cancel"
             android:textSize="17dp" />
 
-        <Button
-            android:id="@+id/deny"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tag_pc"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/accept"
-            android:gravity="center_vertical"
-            android:text="Deny"
-            android:textSize="17dp" />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>

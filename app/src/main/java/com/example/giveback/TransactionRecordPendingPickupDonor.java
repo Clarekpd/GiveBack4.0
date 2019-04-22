@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<TransactionRecordPendingConfirmation.TransactionViewHolder> {
+public class TransactionRecordPendingPickupDonor extends RecyclerView.Adapter<TransactionRecordPendingPickupDonor.TransactionViewHolder> {
 
 
     private Context context;
@@ -24,52 +24,35 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
     private  ArrayList<TransactionRecord> data;
     private int numItems;
 
-    private Button acceptButton;
-    private Button denyButton;
+    private Button cancelDonorButton;
 
 
     public class TransactionViewHolder extends RecyclerView.ViewHolder {
 
 
         // Create a TextView variable called listItemNumberView
-        CardView cardView = (CardView) itemView.findViewById(R.id.transaction_card_view_org_pc);
+        CardView cardView = (CardView) itemView.findViewById(R.id.transaction_card_view_donor_pp);
 
 
         // Create a constructor for NewsViewHolder that accepts a View called itemView as a parameter
         public TransactionViewHolder(View itemView) {
             super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.transaction_card_view_org_pc);
+            cardView = (CardView) itemView.findViewById(R.id.transaction_card_view_donor_pp);
 
-            acceptButton = (Button) itemView.findViewById(R.id.accept);
-            acceptButton.setOnClickListener(new View.OnClickListener() {
+            cancelDonorButton = (Button) itemView.findViewById(R.id.cancel_donor);
+            cancelDonorButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "The donor has been notified that their pick-up has been verified.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "The organization has been notified that your pick-up has been canceled.", Toast.LENGTH_SHORT).show();
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(view.getContext())
-                           .setSmallIcon(R.drawable.connect)
-                            .setContentTitle("Request Notification")
-                            .setContentText("Your request has been accepted.");
+                            .setSmallIcon(R.drawable.connect)
+                            .setContentTitle("Cancel Notification")
+                            .setContentText("This pick-up has been canceled.");
                     // Add as notification
                     NotificationManager manager = (NotificationManager)view.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
                     manager.notify(0, builder.build());
                 }
             });
-
-            denyButton = (Button) itemView.findViewById(R.id.deny);
-            denyButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "The donor has been notified that their pick-up has been canceled.", Toast.LENGTH_SHORT).show();
-                    NotificationCompat.Builder builder = new NotificationCompat.Builder(view.getContext())
-                           .setSmallIcon(R.drawable.connect)
-                            .setContentTitle("Request Notification")
-                            .setContentText("Your request has been denied.");
-                    // Add as notification
-                    NotificationManager manager = (NotificationManager)view.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
-                    manager.notify(0, builder.build());
-                }
-            });
-
 
 
 
@@ -79,7 +62,7 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
 
     }
 
-    public TransactionRecordPendingConfirmation(Context con, int number, ArrayList<TransactionRecord> arrList) {
+    public TransactionRecordPendingPickupDonor(Context con, int number, ArrayList<TransactionRecord> arrList) {
 
         context = con;
         data = arrList;
@@ -91,7 +74,7 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
     @Override
     public TransactionViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         Context context = viewGroup.getContext();
-        int layoutIdForListItem = R.layout.transaction_card_org_pc;
+        int layoutIdForListItem = R.layout.transaction_card_donor_pp;
 
         // Inflate our new item view using a LayoutInflater. It takes the ID of layout in xml.
         // Then --> inflates or converts this collection of view groups and views.
@@ -113,17 +96,17 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
         TransactionRecord record = data.get(i);
         // Set item views based on your views and data model
         CardView thisCardView = transactionViewHolder.cardView;
-        TextView categoryText = (TextView) thisCardView.findViewById(R.id.category_pc);
+        TextView categoryText = (TextView) thisCardView.findViewById(R.id.category_dpp);
         categoryText.setText(record.getCategory());
-        TextView orgNameText = (TextView) thisCardView.findViewById(R.id.orgName_pc);
+        TextView orgNameText = (TextView) thisCardView.findViewById(R.id.orgName_dpp);
         orgNameText.setText(record.getOrgName());
-        TextView donationInfoText = (TextView) thisCardView.findViewById(R.id.donationInfo_pc);
+        TextView donationInfoText = (TextView) thisCardView.findViewById(R.id.donationInfo_dpp);
         donationInfoText.setText(record.getDonation());
-        TextView locationText = (TextView) thisCardView.findViewById(R.id.location_pc);
+        TextView locationText = (TextView) thisCardView.findViewById(R.id.location_dpp);
         locationText.setText(record.getLocation());
-        TextView timeText = (TextView) thisCardView.findViewById(R.id.time_pc);
+        TextView timeText = (TextView) thisCardView.findViewById(R.id.time_dpp);
         timeText.setText(record.getTime());
-        TextView tagText = (TextView) thisCardView.findViewById(R.id.tag_pc);
+        TextView tagText = (TextView) thisCardView.findViewById(R.id.tag_dpp);
         tagText.setText(record.getTag());
     }
 

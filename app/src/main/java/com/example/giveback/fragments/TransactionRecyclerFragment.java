@@ -15,6 +15,8 @@ import com.example.giveback.R;
 import com.example.giveback.TransactionRecord;
 import com.example.giveback.TransactionRecordAdapter;
 import com.example.giveback.TransactionRecordPendingConfirmation;
+import com.example.giveback.TransactionRecordPendingPickup;
+import com.example.giveback.TransactionRecordPendingPickupDonor;
 
 import java.util.ArrayList;
 
@@ -41,6 +43,16 @@ public class TransactionRecyclerFragment extends Fragment {
         if(title.equals("Pending Confirmation") && !isDonor)
         {
             TransactionRecordPendingConfirmation adapter = new TransactionRecordPendingConfirmation(c, 9, data);
+            recyclerView.setAdapter(adapter);
+        }
+        else if(title.equals("Pending Pickup") && !isDonor)
+        {
+            TransactionRecordPendingPickup adapter = new TransactionRecordPendingPickup(c, 9, data);
+            recyclerView.setAdapter(adapter);
+        }
+        else if(title.equals("Pending Pickup") && isDonor)
+        {
+            TransactionRecordPendingPickupDonor adapter = new TransactionRecordPendingPickupDonor(c, 9, data);
             recyclerView.setAdapter(adapter);
         }
         else
