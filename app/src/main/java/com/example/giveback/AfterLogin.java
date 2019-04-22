@@ -12,7 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.giveback.fragments.DonationRequestFragment;
 import com.example.giveback.fragments.LoginFragment;
 import com.example.giveback.fragments.OrganizationRecyclerFragment;
 import com.example.giveback.fragments.TransactionRecyclerFragment;
@@ -20,28 +19,51 @@ import com.example.giveback.fragments.DonorRecyclerFragment;
 
 import java.util.ArrayList;
 
+ public class AfterLogin extends AppCompatActivity {
 
- public class AfterLogin extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+     private Boolean userType;
+     private Toolbar toolbar;
+     private DrawerLayout drawer;
+     private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        //get bundle and userType from MainActivity
+        Bundle bundle = getIntent().getExtras();
+        userType = bundle.getBoolean("userType");
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if(userType)
+        {
+            setContentView(R.layout.activity_main_donor);
+        }
+        else
+        {
+            setContentView(R.layout.activity_main_org);
+        }
+
+
+
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(
+                        new NavigationView.OnNavigationItemSelectedListener() {
+                            @Override
+                            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                                selectNavigation(menuItem);
+                                return true;
+                            }});
 
 
         ////String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo
@@ -55,16 +77,17 @@ import java.util.ArrayList;
 
         ArrayList<DonorRecord> bob = new ArrayList<>();
 
-        bob.add(new DonorRecord("Ash","Czech","ash_czech@gmail.com","password","Ash_Czezh123",1));
-        bob.add(new DonorRecord("Nora","Barack","overlord@yopmail.com","password","Nora456",2));
-        bob.add(new DonorRecord("Mary","Foran","676-676-87","password","forfor56",3));
-        bob.add(new DonorRecord("Joe","Bob","jacks@outlook.com","password","joe1238",4));
-        bob.add(new DonorRecord("Claire","Clare","bachmann@live.com","password","clareness",5));
-        bob.add(new DonorRecord("Prapthi","Samsonite","123-456-78","password","77samsonite77",6));
-        bob.add(new DonorRecord("Raphael","Solano","7890987","password","jane678",7));
-        bob.add(new DonorRecord("Iris","Sirrkay","squirrel@icloud.com","password","guinea7",8));
-        bob.add(new DonorRecord("Ellie","Hurdlehall","134-6786","password","ells",9));
-        bob.add(new DonorRecord("Magda","Petra","oveputtah-0844@yopmail.com","password","xopo mag",10));
+        bob.add(new DonorRecord("Ash","Czech","ash_czech@gmail.com","e","o",1));
+        bob.add(new DonorRecord("Nora","Barack","v","f","p",2));
+        bob.add(new DonorRecord("Mary","Foran","w","g","q",3));
+        bob.add(new DonorRecord("Joe","Bob","x","h","r",4));
+        bob.add(new DonorRecord("Claire","Clare","y","i","s",5));
+        bob.add(new DonorRecord("Prapthi","Samsonite","z","j","t",6));
+        bob.add(new DonorRecord("Raphael","Solano","a","k","u",7));
+        bob.add(new DonorRecord("Iris","Sirrkay","b","l","v",8));
+        bob.add(new DonorRecord("Ellie","Hurdlehall","c","m","w",9));
+        bob.add(new DonorRecord("Magda","Petra","d","n","x",10));
+
 
         DonorRecordAdapter adapter2 = new DonorRecordAdapter(getApplicationContext(), 10, bob);
         OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, chris);
@@ -119,19 +142,20 @@ import java.util.ArrayList;
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public void selectNavigation(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         //creating fragment object
         Fragment fragment = null;
 
+
+        //fragments that appear for both users
         if (id == R.id.nav_pending_conformation) {
             fragment = new TransactionRecyclerFragment();
             ((TransactionRecyclerFragment) fragment).setData(getPendingConfirmations());
             ((TransactionRecyclerFragment) fragment).setTitle("Pending Confirmation");
+            ((TransactionRecyclerFragment) fragment).setDonor(userType);
 
         } else if (id == R.id.nav_pending_pickup) {
             fragment = new TransactionRecyclerFragment();
@@ -141,20 +165,29 @@ import java.util.ArrayList;
             fragment = new TransactionRecyclerFragment();
             ((TransactionRecyclerFragment) fragment).setData(getPickupHistoryRecords());
             ((TransactionRecyclerFragment) fragment).setTitle("Pickup History");
-        }else if (id == R.id.nav_org_menu) {
-            fragment = new OrganizationRecyclerFragment();
-            ((OrganizationRecyclerFragment) fragment).setOrgRecords(getOrganizationRecords());
-            ((OrganizationRecyclerFragment) fragment).setTitle("My Information");
         }
-        //TODO: add Organization Info navigation, New type of Fragment and layout for it, passing in org info
-        else if (id == R.id.nav_donor_menu) {
-            fragment = new DonorRecyclerFragment();
-            ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
-            ((DonorRecyclerFragment) fragment).setTitle("My Information");
-        } else if (id == R.id.nav_donor_request) {
-            fragment = new DonorRecyclerFragment();
-            //((DonationRequestFragment) fragment).set(get);
-            ((DonationRequestFragment) fragment).setTitle("Donation Request");
+
+        //fragments that only appear for orgs
+        if(userType) {
+            if (id == R.id.nav_donor_menu) {
+                fragment = new DonorRecyclerFragment();
+                ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
+                ((DonorRecyclerFragment) fragment).setTitle("My Information");
+            } else if (id == R.id.nav_donor_request) {
+                fragment = new DonorRecyclerFragment();
+                ((DonorRecyclerFragment) fragment).setTitle("Donation Request");
+            }
+
+        }
+
+        //fragments that only appear for donors
+        else {
+            if (id == R.id.nav_org_menu) {
+                fragment = new OrganizationRecyclerFragment();
+                ((OrganizationRecyclerFragment) fragment).setOrgRecords(getOrganizationRecords());
+                ((OrganizationRecyclerFragment) fragment).setTitle("My Information");
+            }
+            //TODO: add Organization Info navigation, New type of Fragment and layout for it, passing in org info
         }
 
 
@@ -168,7 +201,7 @@ import java.util.ArrayList;
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        //return true;
     }
 
 

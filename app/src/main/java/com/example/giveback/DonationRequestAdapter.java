@@ -2,10 +2,8 @@ package com.example.giveback;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +14,7 @@ public class DonationRequestAdapter extends RecyclerView.Adapter<DonationRequest
 
     public class RequestViewHolder extends RecyclerView.ViewHolder {
 
-        RecyclerView recyclerView = (RecyclerView) itemView.findViewById(R.id.donation_request);
+        LinearLayoutCompat linearLayoutCompat = (LinearLayoutCompat) itemView.findViewById(R.id.donation_request);
 
         public RequestViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -28,7 +26,7 @@ public class DonationRequestAdapter extends RecyclerView.Adapter<DonationRequest
             Context context = viewGroup.getContext();
             int layoutIdForListItem = R.layout.donation_request;
 
-            RecyclerView recyclerView;
+            LinearLayoutCompat linearLayoutCompat;
 
             LayoutInflater inflater = LayoutInflater.from(context);
 
@@ -41,33 +39,33 @@ public class DonationRequestAdapter extends RecyclerView.Adapter<DonationRequest
         @Override
         public void onBindViewHolder(@NonNull RequestViewHolder requestViewHolder, int i) {
 
-            RecyclerView thisRecyclerView = requestViewHolder.recyclerView;
+            LinearLayoutCompat thisLinearLayoutCompat = requestViewHolder.linearLayoutCompat;
 
-            TextView descriptionLabelText = (TextView) thisRecyclerView.findViewById(R.id.descriptionLabel);
+            TextView descriptionLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.descriptionLabel);
 
-            EditText descriptionText = (EditText) thisRecyclerView.findViewById(R.id.description);
+            EditText descriptionText = (EditText) thisLinearLayoutCompat.findViewById(R.id.description);
 
-            TextView dimensionsLabelText = (TextView) thisRecyclerView.findViewById(R.id.dimensionLabel);
+            TextView dimensionsLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.dimensionLabel);
 
-            EditText dimensionsText = (EditText) thisRecyclerView.findViewById(R.id.dimensions);
+            EditText dimensionsText = (EditText) thisLinearLayoutCompat.findViewById(R.id.dimensions);
 
-            TextView itemsLabelText = (TextView) thisRecyclerView.findViewById(R.id.itemsLabel);
+            TextView itemsLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.itemsLabel);
 
-            EditText itemsText = (EditText) thisRecyclerView.findViewById(R.id.items);
+            EditText itemsText = (EditText) thisLinearLayoutCompat.findViewById(R.id.items);
 
-            TextView locationLabelText = (TextView) thisRecyclerView.findViewById(R.id.locationLabel);
+            TextView locationLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.locationLabel);
 
-            EditText locationText = (EditText) thisRecyclerView.findViewById(R.id.location);
+            EditText locationText = (EditText) thisLinearLayoutCompat.findViewById(R.id.location_pc);
 
-            TextView specialIntructionsLabelText = (TextView) thisRecyclerView.findViewById(R.id.specialInstructionsLabel);
+            TextView specialIntructionsLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.specialInstructionsLabel);
 
-            EditText specialIntrusctionsText = (EditText) thisRecyclerView.findViewById(R.id.specialInstructions);
+            EditText specialIntrusctionsText = (EditText) thisLinearLayoutCompat.findViewById(R.id.specialInstructions);
 
-            TextView numberOfItemsLabelText = (TextView) thisRecyclerView.findViewById(R.id.numberOfItemsLabel);
+            TextView numberOfItemsLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.numberOfItemsLabel);
 
-            TextView orgNamesLabelText = (TextView) thisRecyclerView.findViewById(R.id.orgNamesLabel);
+            TextView orgNamesLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.orgNamesLabel);
 
-            EditText orgNameText = (EditText) thisRecyclerView.findViewById(R.id.orgName);
+            EditText orgNameText = (EditText) thisLinearLayoutCompat.findViewById(R.id.orgName_pc);
         }
 
         @Override

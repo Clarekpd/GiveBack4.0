@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.giveback.R;
 import com.example.giveback.TransactionRecord;
 import com.example.giveback.TransactionRecordAdapter;
+import com.example.giveback.TransactionRecordPendingConfirmation;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ public class TransactionRecyclerFragment extends Fragment {
 
     private ArrayList<TransactionRecord> data;
     private String title;
-
+    private Boolean isDonor;
 
     @Nullable
     @Override
@@ -37,8 +38,17 @@ public class TransactionRecyclerFragment extends Fragment {
 
         // Don't change the size of the content
         recyclerView.setHasFixedSize(true);
-        TransactionRecordAdapter adapter = new TransactionRecordAdapter(c, 9, data);
-        recyclerView.setAdapter(adapter);
+        if(title.equals("Pending Confirmation") && !isDonor)
+        {
+            TransactionRecordPendingConfirmation adapter = new TransactionRecordPendingConfirmation(c, 9, data);
+            recyclerView.setAdapter(adapter);
+        }
+        else
+        {
+            TransactionRecordAdapter adapter = new TransactionRecordAdapter(c, 9, data);
+            recyclerView.setAdapter(adapter);
+        }
+
 
         return view;
     }
@@ -67,5 +77,11 @@ public class TransactionRecyclerFragment extends Fragment {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public Boolean getDonor() { return isDonor; }
+
+    public void setDonor(Boolean donor) { isDonor = donor; }
+
+
 
 }
