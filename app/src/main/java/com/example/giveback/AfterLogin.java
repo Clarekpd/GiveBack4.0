@@ -37,10 +37,38 @@ import java.util.ArrayList;
         if(userType)
         {
             setContentView(R.layout.activity_main_donor);
+            //creating fragment object
+            Fragment fragment = null;
+
+            fragment = new DonorRecyclerFragment();
+            ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
+            ((DonorRecyclerFragment) fragment).setTitle("My Information");
+
+
+            //replacing the fragment with the one that was clicked on
+            if (fragment != null) {
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, fragment);
+                ft.commit();
+            }
         }
         else
         {
             setContentView(R.layout.activity_main_org);
+            //creating fragment object
+            Fragment fragment = null;
+
+            fragment = new OrganizationRecyclerFragment();
+            ((OrganizationRecyclerFragment) fragment).setOrgRecords(getOrganizationRecords());
+            ((OrganizationRecyclerFragment) fragment).setTitle("My Information");
+
+
+            //replacing the fragment with the one that was clicked on
+            if (fragment != null) {
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, fragment);
+                ft.commit();
+            }
         }
 
 
@@ -92,19 +120,19 @@ import java.util.ArrayList;
         OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, chris);
 
 
-        //creating fragment object
-        Fragment fragment = null;
-
-        fragment = new LoginFragment();
-        ((LoginFragment) fragment).setTitle("Login");
-
-
-        //replacing the fragment with the one that was clicked on
-        if (fragment != null) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
-            ft.commit();
-        }
+//        //creating fragment object
+//        Fragment fragment = null;
+//
+//        fragment = new LoginFragment();
+//        ((LoginFragment) fragment).setTitle("Login");
+//
+//
+//        //replacing the fragment with the one that was clicked on
+//        if (fragment != null) {
+//            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//            ft.replace(R.id.content_frame, fragment);
+//            ft.commit();
+//        }
 
 
     }

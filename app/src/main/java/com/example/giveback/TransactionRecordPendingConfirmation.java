@@ -48,7 +48,7 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(view.getContext())
                            .setSmallIcon(R.drawable.connect)
                             .setContentTitle("Request Notification")
-                            .setContentText("Your request has been accepted.");
+                            .setContentText("Your donation request has been accepted.");
                     // Add as notification
                     NotificationManager manager = (NotificationManager)view.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
                     manager.notify(0, builder.build());
@@ -63,7 +63,7 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(view.getContext())
                            .setSmallIcon(R.drawable.connect)
                             .setContentTitle("Request Notification")
-                            .setContentText("Your request has been denied.");
+                            .setContentText("Your donation request has been denied.");
                     // Add as notification
                     NotificationManager manager = (NotificationManager)view.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
                     manager.notify(0, builder.build());
