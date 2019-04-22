@@ -112,8 +112,8 @@ public class OrganizationRecordAdapter extends RecyclerView.Adapter<Organization
         TextView advanceNoticeWindowText = (TextView) thisCardView.findViewById(R.id.advanceNoticeWindow);
         advanceNoticeWindowText.setText(record.getAdvanceNoticeWindow());
 
-        TextView logoText = (TextView) thisCardView.findViewById(R.id.logo);
-        logoText.setText(record.getLogo());
+        //TextView logoText = (TextView) thisCardView.findViewById(R.id.logo);
+        //logoText.setText(record.getLogo());
 
     }
 
