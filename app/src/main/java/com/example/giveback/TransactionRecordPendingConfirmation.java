@@ -49,7 +49,7 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
                 public void onClick(View view) {
                     Toast.makeText(view.getContext(), "The donor has been notified that their request has been accepted.", Toast.LENGTH_SHORT).show();
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(view.getContext())
-                            .setSmallIcon(R.drawable.connect)
+                           .setSmallIcon(R.drawable.connect)
                             .setContentTitle("Request Notification")
                             .setContentText("Your request has been accepted.");
                     // Add as notification
@@ -64,7 +64,7 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
                 public void onClick(View view) {
                     Toast.makeText(view.getContext(), "The donor has been notified that their request has been denied.", Toast.LENGTH_SHORT).show();
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(view.getContext())
-                            .setSmallIcon(R.drawable.connect)
+                           .setSmallIcon(R.drawable.connect)
                             .setContentTitle("Request Notification")
                             .setContentText("Your request has been denied.");
                     // Add as notification
