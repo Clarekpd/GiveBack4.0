@@ -46,7 +46,7 @@ public class SearchActivity extends AppCompatActivity {
                 case R.id.nav_view:
                     startActivity(new Intent(SearchActivity.this, AfterLogin.class));
                     return true;
-                case R.id.nav_search_menu:
+                case R.id.nav_donor_menu:
                     startActivity(new Intent(SearchActivity.this, SearchActivity.class));
                     return true;
             }
@@ -78,7 +78,7 @@ public class SearchActivity extends AppCompatActivity {
         NavigationView navigation = findViewById(R.id.navigation);
        // navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu a = navigation.getMenu();
-        MenuItem b = a.findItem(R.id.nav_search_menu);
+        MenuItem b = a.findItem(R.id.nav_donor_menu);
         b.setChecked(true);
         Button searchButton = findViewById(R.id.button);
         final EditText editText = findViewById(R.id.editSearch);
