@@ -155,6 +155,7 @@ import java.util.ArrayList;
             fragment = new TransactionRecyclerFragment();
             ((TransactionRecyclerFragment) fragment).setData(getPendingConfirmations());
             ((TransactionRecyclerFragment) fragment).setTitle("Pending Confirmation");
+            ((TransactionRecyclerFragment) fragment).setDonor(userType);
 
         } else if (id == R.id.nav_pending_pickup) {
             fragment = new TransactionRecyclerFragment();

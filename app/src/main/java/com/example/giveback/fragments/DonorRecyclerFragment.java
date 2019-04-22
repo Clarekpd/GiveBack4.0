@@ -30,7 +30,7 @@ public class DonorRecyclerFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view =  inflater.inflate(R.layout.recycler_content_donor, container, false);
+        final View view =  inflater.inflate(R.layout.recycler_content, container, false);
         RecyclerView recyclerView =  (RecyclerView) view.findViewById(R.id.rec_view);
         final FragmentActivity c = getActivity();
         LinearLayoutManager layoutManager = new LinearLayoutManager(c);

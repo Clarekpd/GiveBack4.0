@@ -2,11 +2,8 @@ package com.example.giveback;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +55,7 @@ public class DonationRequestAdapter extends RecyclerView.Adapter<DonationRequest
 
             TextView locationLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.locationLabel);
 
-            EditText locationText = (EditText) thisLinearLayoutCompat.findViewById(R.id.location);
+            EditText locationText = (EditText) thisLinearLayoutCompat.findViewById(R.id.location_pc);
 
             TextView specialIntructionsLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.specialInstructionsLabel);
 
@@ -68,7 +65,7 @@ public class DonationRequestAdapter extends RecyclerView.Adapter<DonationRequest
 
             TextView orgNamesLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.orgNamesLabel);
 
-            EditText orgNameText = (EditText) thisLinearLayoutCompat.findViewById(R.id.orgName);
+            EditText orgNameText = (EditText) thisLinearLayoutCompat.findViewById(R.id.orgName_pc);
         }
 
         @Override

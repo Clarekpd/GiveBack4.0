@@ -59,7 +59,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/location"
+            android:id="@+id/location_pc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/locationLabel"
@@ -72,7 +72,7 @@
             android:id="@+id/dimensionLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/location"
+            android:layout_below="@id/location_pc"
             android:gravity="center_vertical"
             android:text="Put dimensions of the items here:"
             android:textSize="20sp" />
@@ -152,7 +152,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/orgName"
+            android:id="@+id/orgName_pc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/orgNamesLabel"
