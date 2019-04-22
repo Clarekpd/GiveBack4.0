@@ -24,5 +24,10 @@
             android:id="@+id/nav_donor_request"
             android:icon="@drawable/ic_menu_donation_request"
             android:title="Create Donation Request" />
+        <!--<item-->
+            <!--android:id="@+id/nav_search_menu"-->
+            <!--android:icon="@drawable/ic_menu_search"-->
+            <!--android:title="Search" />-->
+
     </group>
 </menu>

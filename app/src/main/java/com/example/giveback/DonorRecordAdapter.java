@@ -17,7 +17,7 @@ public class DonorRecordAdapter extends RecyclerView.Adapter<DonorRecordAdapter.
 
 
     private Context context;
-    private  ArrayList<DonorRecord> bob;
+    private  ArrayList<DonorRecord> donorRecords;
     private int numItems;
 
     public class DonorViewHolder extends RecyclerView.ViewHolder {
@@ -39,7 +39,7 @@ public class DonorRecordAdapter extends RecyclerView.Adapter<DonorRecordAdapter.
     public DonorRecordAdapter(Context con, int number, ArrayList<DonorRecord> arrList) {
 
         context = con;
-        bob = arrList;
+        donorRecords = arrList;
         numItems = number;
 
     }
@@ -71,7 +71,7 @@ public class DonorRecordAdapter extends RecyclerView.Adapter<DonorRecordAdapter.
     public void onBindViewHolder(@NonNull DonorViewHolder transactionViewHolder, int i) {
         // Get the data model based on position
 
-        DonorRecord record = bob.get(i);
+        DonorRecord record = donorRecords.get(i);
         // Set item views based on your views and data model
         CardView thisCardView = transactionViewHolder.cardView;
 
@@ -96,7 +96,7 @@ public class DonorRecordAdapter extends RecyclerView.Adapter<DonorRecordAdapter.
 
     @Override
     public int getItemCount() {
-        return bob.size();
+        return donorRecords.size();
     }
 
 

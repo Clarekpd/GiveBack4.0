@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.giveback.fragments.DonationRequestFragment;
 import com.example.giveback.fragments.LoginFragment;
 import com.example.giveback.fragments.OrganizationRecyclerFragment;
 import com.example.giveback.fragments.TransactionRecyclerFragment;
@@ -202,8 +203,8 @@ import java.util.ArrayList;
                 ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
                 ((DonorRecyclerFragment) fragment).setTitle("My Information");
             } else if (id == R.id.nav_donor_request) {
-                fragment = new DonorRecyclerFragment();
-                ((DonorRecyclerFragment) fragment).setTitle("Donation Request");
+                fragment = new DonationRequestFragment();
+                ((DonationRequestFragment) fragment).setTitle("Donation Request");
             }
 
         }

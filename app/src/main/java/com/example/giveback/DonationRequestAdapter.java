@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -66,6 +67,8 @@ public class DonationRequestAdapter extends RecyclerView.Adapter<DonationRequest
             TextView orgNamesLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.orgNamesLabel);
 
             EditText orgNameText = (EditText) thisLinearLayoutCompat.findViewById(R.id.orgName_pc);
+
+            Button submitButton = (Button) thisLinearLayoutCompat.findViewById(R.id.submit_button);
         }
 
         @Override
