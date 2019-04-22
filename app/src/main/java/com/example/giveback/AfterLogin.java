@@ -292,7 +292,7 @@ import java.util.ArrayList;
      private ArrayList<DonorRecord> getDonorRecords() {
          ArrayList<DonorRecord> donorRecords = new ArrayList<>();
 
-         donorRecords.add(new DonorRecord("Ashley","Chen","u","e","o",1));
+         donorRecords.add(new DonorRecord("Megan Tol","123 Baker Street","tol123@gmail.com","tdy245","tol123",5));
 
          return donorRecords;
      }
