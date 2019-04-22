@@ -15,68 +15,123 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/category"
+            android:id="@+id/OrgNameLabel"
             android:layout_width="match_parent"
-            android:layout_height="23dp"
+            android:layout_height="wrap_content"
+            android:text="Organization name"
             android:gravity="center_vertical"
-            android:text="contact det"
-            android:textSize="20dp" />
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/orgName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/category"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/OrgNameLabel"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/CategoryLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Categories: "
+            android:layout_below="@id/orgName"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:gravity="center_vertical"
+            android:layout_below="@id/CategoryLabel"
+            android:layout_marginLeft="5dp"
+            android:text="contact det"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/DonationInfoLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Donation Information: "
+            android:layout_below="@id/category"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/donationInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/orgName"
+            android:layout_below="@id/DonationInfoLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/LocationLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Categories: "
+            android:layout_below="@id/donationInfo"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/donationInfo"
+            android:layout_below="@id/LocationLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/TimeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Categories: "
+            android:layout_below="@id/location"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/location"
+            android:layout_below="@id/TimeLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
 
         <TextView
+            android:id="@+id/TagLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Instructions: "
+            android:layout_below="@id/time"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textSize="17dp"/>
+
+      <TextView
             android:id="@+id/tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/time"
+            android:layout_below="@id/TagLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
-
 
 
 
