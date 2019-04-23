@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/transaction_card_view_org_pc"
     android:layout_width="match_parent"
-    android:layout_height="260dp"
+    android:layout_height="350dp"
     card_view:cardCornerRadius="4dp"
     android:layout_margin="5dp">
 
@@ -15,67 +15,124 @@
         android:layout_height="500dp">
 
         <TextView
+            android:id="@+id/CategoryLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Category: "
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
+
+        <TextView
             android:id="@+id/category_pc"
             android:layout_width="match_parent"
             android:layout_height="23dp"
             android:gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/CategoryLabel"
             android:text="contact det"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/OrgNameLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Organization Name: "
+            android:gravity="center_vertical"
+            android:layout_below="@id/category_pc"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/orgName_pc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/category_pc"
+            android:layout_below="@id/OrgNameLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/DonationInfoLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Donation Info: "
+            android:gravity="center_vertical"
+            android:layout_below="@id/orgName_pc"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/donationInfo_pc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/orgName_pc"
+            android:layout_below="@id/DonationInfoLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/LocationLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Location: "
+            android:gravity="center_vertical"
+            android:layout_below="@id/donationInfo_pc"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/location_pc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/donationInfo_pc"
+            android:layout_below="@id/LocationLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/TimeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Time: "
+            android:gravity="center_vertical"
+            android:layout_below="@id/location_pc"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/time_pc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/location_pc"
+            android:layout_below="@id/TimeLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
 
         <TextView
+            android:id="@+id/TagLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Instructions: "
+            android:gravity="center_vertical"
+            android:layout_below="@id/time_pc"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
+
+        <TextView
             android:id="@+id/tag_pc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/time_pc"
+            android:layout_below="@id/TagLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+
 
         <Button
             android:id="@+id/accept"
