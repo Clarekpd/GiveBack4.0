@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/transaction_card_view_donor_pp"
     android:layout_width="match_parent"
-    android:layout_height="260dp"
+    android:layout_height="350dp"
     card_view:cardCornerRadius="4dp"
     android:layout_margin="5dp">
 
@@ -76,7 +76,7 @@
             android:id="@+id/LocationLabel"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:text="Loaction: "
+            android:text="Location: "
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:layout_below="@id/donationInfo_dpp"
@@ -138,7 +138,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tag_dpp"
             android:layout_marginLeft="230dp"
-            android:layout_marginTop="10dp"
             android:text="Cancel"
             android:textSize="17dp" />
 
