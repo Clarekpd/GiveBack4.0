@@ -6,4 +6,23 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="org_array">
+        <item> </item>
+        <item>Are You Hungry</item>
+        <item>Toys For Kiddos</item>
+        <item>Orange Spatula</item>
+        <item>Girl Scouts Book Drive</item>
+        <item>Jeans Drive</item>
+    </string-array>
+
+    <string-array name="category_array">
+        <item> </item>
+        <item>Toys</item>
+        <item>Clothing</item>
+        <item>Furniture</item>
+        <item>Perishable Food</item>
+        <item>Non-Perishable Food</item>
+    </string-array>
+
 </resources>

@@ -66,8 +66,6 @@ public class DonationRequestAdapter extends RecyclerView.Adapter<DonationRequest
 
             TextView orgNamesLabelText = (TextView) thisLinearLayoutCompat.findViewById(R.id.orgNamesLabel);
 
-            EditText orgNameText = (EditText) thisLinearLayoutCompat.findViewById(R.id.orgName_pc);
-
             Button submitButton = (Button) thisLinearLayoutCompat.findViewById(R.id.submit_button);
         }
 
