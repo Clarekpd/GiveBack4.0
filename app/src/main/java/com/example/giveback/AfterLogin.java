@@ -294,6 +294,7 @@ import java.util.ArrayList;
      private ArrayList<TransactionRecord> getPickupHistoryRecords() {
          ArrayList<TransactionRecord> data = new ArrayList<>();
 
+         data.add(new TransactionRecord("Non-Perishable food", "Are You Hungry"," non-perishable goods, 4 jars of peanut butter","123 Baker Street, Eagan, MN","4:30 pm May 2nd","none"));
          data.add(new TransactionRecord("food", "Are You Hungry?","14 jars of Peanut Butter","9867 chestnut lane, eagan MN","7-9:30 Tuesday Sep. 3","under the tree"));
 
          return data;
