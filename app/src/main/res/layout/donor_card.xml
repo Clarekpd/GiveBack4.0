@@ -95,25 +95,27 @@
             android:layout_below="@id/loginDonor"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"/>-->
+        <!--
+               <TextView
+                   android:id="@+id/numberOfItemsLabel"
+                   android:layout_width="match_parent"
+                   android:layout_height="23dp"
+                   android:text="Number of Items:"
+                   android:textStyle="bold"
+                   android:gravity="center_vertical"
+                   android:layout_below="@id/contactInfoDonor"
+                   android:textSize="17dp"/>
 
-        <TextView
-            android:id="@+id/numberOfItemsLabel"
-            android:layout_width="match_parent"
-            android:layout_height="23dp"
-            android:text="Number of Items:"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:layout_below="@id/contactInfoDonor"
-            android:textSize="17dp"/>
+             <TextView
+                   android:id="@+id/numberOfItems"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Name"
+                   android:layout_marginLeft="5dp"
+                   android:gravity="center_vertical"
+                   android:textSize="17dp"
+                   android:layout_below="@id/numberOfItemsLabel"/>
 
-        <TextView
-            android:id="@+id/numberOfItems"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:layout_marginLeft="5dp"
-            android:gravity="center_vertical"
-            android:textSize="17dp"
-            android:layout_below="@id/numberOfItemsLabel"/>
-    </RelativeLayout>
-</android.support.v7.widget.CardView>
+       -->
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
