@@ -1,6 +1,8 @@
 package com.example.giveback.fragments;
 
+import android.app.DatePickerDialog;
 import android.app.NotificationManager;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +19,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.giveback.AfterLogin;
@@ -28,10 +33,17 @@ import com.example.giveback.R;
 import com.example.giveback.TransactionRecord;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class DonationRequestFragment extends Fragment {
     private String title;
     Bundle bundle = new Bundle();
+    TimePickerDialog picker;
+    EditText eText;
+    EditText eText2;
+    DatePickerDialog datePicker;
+
+
 
 
     @Nullable
@@ -62,6 +74,50 @@ public class DonationRequestFragment extends Fragment {
 
             }
         });
+
+        Button timeButton = (Button) view.findViewById(R.id.time_button);
+        eText=(EditText) view.findViewById(R.id.timeText);
+        timeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar cldr = Calendar.getInstance();
+                int hour = cldr.get(Calendar.HOUR_OF_DAY);
+                int minutes = cldr.get(Calendar.MINUTE);
+                // time picker dialog
+                picker = new TimePickerDialog(view.getContext(),
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
+                                eText.setText(sHour + ":" + sMinute);
+                            }
+                        }, hour, minutes, true);
+                picker.show();
+
+            }
+        });
+
+        Button dateButton = (Button) view.findViewById(R.id.date_button);
+        eText2=(EditText) view.findViewById(R.id.dateText);
+        dateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                int month = cldr.get(Calendar.MONTH);
+                // time picker dialog
+                datePicker = new DatePickerDialog(view.getContext(),
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker tp, int year, int month, int day) {
+                                eText2.setText(month + 1 + "/" + day + "/" + year);
+                            }
+                        }, year, month, day);
+                datePicker.show();
+
+            }
+        });
+
 
         Spinner spinner = (Spinner) view.findViewById(R.id.org_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout

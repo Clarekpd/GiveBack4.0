@@ -105,11 +105,18 @@
             android:inputType="text"
             android:textSize="17sp" />
 
+        <Button
+            android:id="@+id/photo_button"
+            android:text="Add Photo Of Donation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/description"/>
+
         <TextView
             android:id="@+id/estimatedWeightLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/description"
+            android:layout_below="@id/photo_button"
             android:gravity="center_vertical"
             android:text="Put the estimated weight of heaviest item here:"
             android:textSize="20sp" />
@@ -191,14 +198,53 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/specialInstructions"
             android:gravity="center_vertical"
-            android:text="Put time and date of pickup here:"
+            android:text="Put time for pickup here:"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/time"
+        <Button
+            android:id="@+id/time_button"
+            android:text="Pick Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/timeLabel"
+            android:layout_below="@id/timeLabel"/>
+
+        <!--<TimePicker-->
+            <!--android:id="@+id/timePicker1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/timeLabel"/>-->
+
+        <EditText
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time_button"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/dateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timeText"
+            android:gravity="center_vertical"
+            android:text="Put date for pickup here:"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/date_button"
+            android:text="Pick Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateLabel"/>
+
+        <EditText
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_button"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:inputType="text"
@@ -209,7 +255,7 @@
             android:text="Submit Request"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/time"/>
+            android:layout_below="@id/dateText"/>
 
     </RelativeLayout>
         </ScrollView>

@@ -1,6 +1,8 @@
  package com.example.giveback;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -9,8 +11,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CalendarView;
 
 import com.example.giveback.fragments.DonationRequestFragment;
 import com.example.giveback.fragments.LoginFragment;
@@ -26,6 +30,7 @@ import java.util.ArrayList;
      private Toolbar toolbar;
      private DrawerLayout drawer;
      private NavigationView navigationView;
+     private CalendarView mCalendarView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -251,6 +256,7 @@ import java.util.ArrayList;
     private ArrayList<TransactionRecord> getPendingConfirmations() {
         ArrayList<TransactionRecord> data = new ArrayList<>();
 
+        data.add(new TransactionRecord("Non-Perishable food", "Are You Hungry"," non-perishable goods, 4 jars of peanut butter","123 Baker Street, Eagan, MN","4:30 pm May 2nd","none"));
         data.add(new TransactionRecord("food", "Are You Hungry","non-perishable goods, 4 jars of peanut butter","7779 Townline Rd, Eden Praire, MN","7-9:30 Tuesday Sep. 3","under the big oak tree on the front yard"));
         data.add(new TransactionRecord("clothes", "Are You Hungry","22 shirts of various sizes","2244 Glenbrook Rd N, Wayzata, MN", "9 pm Friday April 29","Check behind the pot of flowers"));
         data.add(new TransactionRecord("toy", "Toys For Kiddos","Lego Pieces-1000 piece set","3444 Vanhauser lane, Dayton, OH","5pm Any Monday until Jun 20","Ring my doorbell"));
@@ -274,8 +280,8 @@ import java.util.ArrayList;
      private ArrayList<TransactionRecord> getPendingPickupRecords() {
          ArrayList<TransactionRecord> data = new ArrayList<>();
 
-         data.add(new TransactionRecord("Food", "AreYouHungry?","12 jars of Peanut Butter","1928 Becker Street, Eden Prairie 55679","8pm Wednesday Jan. 15","under the tree"));
-         data.add(new TransactionRecord("Clothes", "AreYouHunry?","47 t-shirts","6832 Brookstone Bridge, Mpls 55683","7-9:30pm Tuesday Sep. 3","On my porch step"));
+         data.add(new TransactionRecord("Non-Perishable food", "Are You Hungry"," non-perishable goods, 4 jars of peanut butter","123 Baker Street, Eagan, MN","4:30 pm May 2nd","none"));
+         data.add(new TransactionRecord("Clothes", "Are You Hungry","47 t-shirts","6832 Brookstone Bridge, Mpls 55683","7-9:30pm Tuesday Sep. 3","On my porch step"));
 
          return data;
      }
@@ -305,5 +311,28 @@ import java.util.ArrayList;
 
          return donorRecords;
      }
+//     public class CalendarActivity extends AppCompatActivity {
+//
+//         private  static final String TAG = "CalendarActivity";
+//         private CalendarView mCalendarView;
+//         @Override
+//         protected void onCreate(@Nullable Bundle savedInstanceState) {
+//             super.onCreate(savedInstanceState);
+//             setContentView(R.layout.donation_request);
+//             mCalendarView = (CalendarView) findViewById(R.id.calendarView);
+//             mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+//                 @Override
+//                 public void onSelectedDayChange(CalendarView CalendarView, int year, int month, int dayOfMonth) {
+//                     String date = year + "/" + month + "/"+ dayOfMonth ;
+//                     Log.d(TAG, "onSelectedDayChange: yyyy/mm/dd:" + date);
+//                     Intent intent = new Intent(CalendarActivity.this,MainActivity.class);
+//                     intent.putExtra("date",date);
+//                     startActivity(intent);
+//
+//                 }
+//             });
+//         }
+//     }
 
-}
+
+ }
