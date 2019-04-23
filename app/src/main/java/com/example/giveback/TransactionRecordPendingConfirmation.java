@@ -2,6 +2,7 @@ package com.example.giveback;
 
 import android.app.NotificationManager;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.CardView;
@@ -28,12 +29,16 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
     private Button denyButton;
 
 
+
+
     public class TransactionViewHolder extends RecyclerView.ViewHolder {
 
 
         // Create a TextView variable called listItemNumberView
         CardView cardView = (CardView) itemView.findViewById(R.id.transaction_card_view_org_pc);
 
+        //ding sound
+        final MediaPlayer ding = MediaPlayer.create(context, R.raw.ding);
 
         // Create a constructor for NewsViewHolder that accepts a View called itemView as a parameter
         public TransactionViewHolder(View itemView) {
@@ -45,6 +50,7 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(view.getContext(), "The donor has been notified that their pick-up has been verified.", Toast.LENGTH_SHORT).show();
+
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(view.getContext())
                             .setSmallIcon(R.drawable.connect)
                             .setContentTitle("Request Notification")
@@ -52,6 +58,8 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
                     // Add as notification
                     NotificationManager manager = (NotificationManager)view.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
                     manager.notify(0, builder.build());
+                    ding.start();
+
                 }
             });
 
@@ -67,6 +75,7 @@ public class TransactionRecordPendingConfirmation extends RecyclerView.Adapter<T
                     // Add as notification
                     NotificationManager manager = (NotificationManager)view.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
                     manager.notify(0, builder.build());
+                    ding.start();
                 }
             });
 

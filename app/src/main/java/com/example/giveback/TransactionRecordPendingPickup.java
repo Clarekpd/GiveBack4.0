@@ -2,6 +2,7 @@ package com.example.giveback;
 
 import android.app.NotificationManager;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.CardView;
@@ -34,6 +35,9 @@ public class TransactionRecordPendingPickup extends RecyclerView.Adapter<Transac
         // Create a TextView variable called listItemNumberView
         CardView cardView = (CardView) itemView.findViewById(R.id.transaction_card_view_org_pp);
 
+        //ding sound
+        final MediaPlayer ding = MediaPlayer.create(context, R.raw.ding);
+
 
         // Create a constructor for NewsViewHolder that accepts a View called itemView as a parameter
         public TransactionViewHolder(View itemView) {
@@ -52,6 +56,8 @@ public class TransactionRecordPendingPickup extends RecyclerView.Adapter<Transac
                     // Add as notification
                     NotificationManager manager = (NotificationManager)view.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
                     manager.notify(0, builder.build());
+
+                    ding.start();
                 }
             });
 
@@ -67,6 +73,8 @@ public class TransactionRecordPendingPickup extends RecyclerView.Adapter<Transac
                     // Add as notification
                     NotificationManager manager = (NotificationManager)view.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
                     manager.notify(0, builder.build());
+
+                    ding.start();
                 }
             });
 
