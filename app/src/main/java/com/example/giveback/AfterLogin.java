@@ -34,17 +34,24 @@ import java.util.ArrayList;
         //get bundle and userType from MainActivity
         Bundle bundle = getIntent().getExtras();
         userType = bundle.getBoolean("userType");
+        String whereToGo = bundle.getString("whereToGo");
+
 
         if(userType)
         {
             setContentView(R.layout.activity_main_donor);
             //creating fragment object
             Fragment fragment = null;
-
-            fragment = new DonorRecyclerFragment();
-            ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
-            ((DonorRecyclerFragment) fragment).setTitle("My Information");
-
+            if(whereToGo == null) {
+                fragment = new DonorRecyclerFragment();
+                ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
+                ((DonorRecyclerFragment) fragment).setTitle("My Information");
+            }else if(whereToGo.equals("pendCon")){
+                fragment = new TransactionRecyclerFragment();
+                ((TransactionRecyclerFragment) fragment).setData(getPendingConfirmations());
+                ((TransactionRecyclerFragment) fragment).setTitle("Pending Confirmation");
+                ((TransactionRecyclerFragment) fragment).setDonor(userType);
+            }
 
             //replacing the fragment with the one that was clicked on
             if (fragment != null) {
