@@ -115,8 +115,8 @@ public class TransactionRecordPendingPickup extends RecyclerView.Adapter<Transac
         CardView thisCardView = transactionViewHolder.cardView;
         TextView categoryText = (TextView) thisCardView.findViewById(R.id.category_pp);
         categoryText.setText(record.getCategory());
-        TextView orgNameText = (TextView) thisCardView.findViewById(R.id.orgName_pp);
-        orgNameText.setText(record.getOrgName());
+       /* TextView orgNameText = (TextView) thisCardView.findViewById(R.id.orgName_pp);
+        orgNameText.setText(record.getOrgName());*/
         TextView donationInfoText = (TextView) thisCardView.findViewById(R.id.donationInfo_pp);
         donationInfoText.setText(record.getDonation());
         TextView locationText = (TextView) thisCardView.findViewById(R.id.location_pp);

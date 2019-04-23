@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/transaction_card_view_org_pp"
     android:layout_width="match_parent"
-    android:layout_height="260dp"
+    android:layout_height="300dp"
     card_view:cardCornerRadius="4dp"
     android:layout_margin="5dp">
 
@@ -30,7 +30,7 @@
             android:gravity="center_vertical"
             android:layout_below="@id/CategoryLabel"
             android:text="contact det"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
  <!--       <TextView
             android:id="@+id/orgName_pp"
@@ -77,7 +77,7 @@
             android:id="@+id/location_pp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/DonationInfoLabel"
+            android:layout_below="@id/LocationLabel"
             android:layout_marginLeft="5dp"
             android:gravity="center_vertical"
             android:text="Name"
@@ -89,7 +89,7 @@
             android:layout_height="23dp"
             android:text="Time: "
             android:gravity="center_vertical"
-            android:layout_below="@id/category_pp"
+            android:layout_below="@id/location_pp"
             android:textStyle="bold"
             android:textSize="17dp"/>
 
@@ -109,7 +109,7 @@
             android:layout_height="23dp"
             android:text="Instructions: "
             android:gravity="center_vertical"
-            android:layout_below="@id/category_pp"
+            android:layout_below="@id/time_pp"
             android:textStyle="bold"
             android:textSize="17dp"/>
 
@@ -138,7 +138,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tag_pp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="9dp"
             android:layout_toRightOf="@id/verify"
             android:gravity="center_vertical"
             android:text="Cancel"
