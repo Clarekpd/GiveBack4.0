@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="23dp"
             android:gravity="center_vertical"
+            android:layout_marginLeft="5dp"
             android:layout_below="@id/CategoryLabel"
             android:text="contact det"
             android:textSize="17dp" />
