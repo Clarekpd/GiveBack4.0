@@ -34,10 +34,11 @@
                 android:id="@+id/donor_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Donor"
-                android:textSize="25dp"
+                android:layout_marginRight="30dp"
                 android:layout_toLeftOf="@+id/org_option"
-                android:layout_marginRight="30dp"/>
+                android:checked="true"
+                android:text="Donor"
+                android:textSize="25dp" />
 
             <RadioButton
                 android:id="@+id/org_option"
