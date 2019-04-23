@@ -191,7 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/specialInstructions"
             android:gravity="center_vertical"
-            android:text="Put time of pickup here:"
+            android:text="Put time and date of pickup here:"
             android:textSize="20sp" />
 
         <EditText
