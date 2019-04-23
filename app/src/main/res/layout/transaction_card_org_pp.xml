@@ -15,14 +15,24 @@
         android:layout_height="500dp">
 
         <TextView
+            android:id="@+id/CategoryLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Category: "
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
+
+        <TextView
             android:id="@+id/category_pp"
             android:layout_width="match_parent"
             android:layout_height="23dp"
             android:gravity="center_vertical"
+            android:layout_below="@id/CategoryLabel"
             android:text="contact det"
             android:textSize="20dp" />
 
-        <TextView
+ <!--       <TextView
             android:id="@+id/orgName_pp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,47 +42,83 @@
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+-->
+        <TextView
+            android:id="@+id/DonationInfoLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Donation Information: "
+            android:gravity="center_vertical"
+            android:layout_below="@id/category_pp"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/donationInfo_pp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/orgName_pp"
+            android:layout_below="@id/DonationInfoLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/LocationLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Location: "
+            android:gravity="center_vertical"
+            android:layout_below="@id/donationInfo_pp"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/location_pp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/donationInfo_pp"
+            android:layout_below="@id/DonationInfoLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/TimeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Time: "
+            android:gravity="center_vertical"
+            android:layout_below="@id/category_pp"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/time_pp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/location_pp"
+            android:layout_below="@id/TimeLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
 
         <TextView
+            android:id="@+id/TagLabel"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Instructions: "
+            android:gravity="center_vertical"
+            android:layout_below="@id/category_pp"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
+
+        <TextView
             android:id="@+id/tag_pp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/time_pp"
+            android:layout_below="@id/TagLabel"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="Name"
             android:textSize="17dp" />
@@ -93,7 +139,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tag_pp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/verify"
             android:gravity="center_vertical"
             android:text="Cancel"

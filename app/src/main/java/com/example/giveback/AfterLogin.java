@@ -265,8 +265,8 @@ import java.util.ArrayList;
      private ArrayList<TransactionRecord> getPendingPickupRecords() {
          ArrayList<TransactionRecord> data = new ArrayList<>();
 
-         data.add(new TransactionRecord("food", "FeedMe","tacos","I'm in your house","7-9:30 Tuesday Sep. 3","under the tree"));
-         data.add(new TransactionRecord("clothes", "FeedMe","t-shirts","I'm in your house","7-9:30 Tuesday Sep. 3","under the tree"));
+         data.add(new TransactionRecord("Food", "AreYouHungry?","12 jars of Peanut Butter","1928 Becker Street, Eden Praire 55679","8pm Wednesday Jan. 15","under the tree"));
+         data.add(new TransactionRecord("Clothes", "AreYouHunry?","47 t-shirts","6832 Brookstone Bridge, Mpls 55683","7-9:30pm Tuesday Sep. 3","On my porch step"));
 
          return data;
      }
