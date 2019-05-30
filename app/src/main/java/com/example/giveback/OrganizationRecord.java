@@ -1,6 +1,9 @@
 package com.example.giveback;
 
 public class OrganizationRecord {
+    private int id;
+    private String orgRecords;
+    private String timestamp;
     private String acceptedCategories;
     private String orgNameOfficial;
     private String loginOrg;
@@ -15,7 +18,43 @@ public class OrganizationRecord {
     private String advanceNoticeWindow;
     private String logo;
 
+    public static final String TABLE_NAME = "orgRecords";
 
+    public static final String COLUMN_ID = "id";
+    public static final String COLUMN_NOTE = "orgRecords";
+    public static final String COLUMN_TIMESTAMP = "timestamp";
+    public static final String COLUMN_ACCEPTED_CATS = "acceptedCategories";
+    public static final String COLUMN_OFFICIAL_NAME = "orgNameOfficial";
+    public static final String COLUMN_LOGIN_ORG = "loginOrg";
+    public static final String COLUMN_ID_ORG = "idOrg";
+    public static final String COLUMN_PICKUP_REGIONS = "pickUpRegions";
+    public static final String COLUMN_PICKUP_HOURS = "pickUpHours";
+    public static final String COLUMN_ORG_CONTACT_INFO = "contactInfoOrg";
+    public static final String COLUMN_ORG_DESCRIPTION = "orgDescription";
+    public static final String COLUMN_ACCEPTED_ITEMS = "acceptedItems";
+    public static final String COLUMN_WEBSITE = "website";
+    public static final String COLUMN_NOTICE_WINDOW = "advanceNoticeWindow";
+    public static final String COLUMN_LOGO = "logo";
+
+
+    public static final String CREATE_TABLE =
+            "CREATE TABLE " + TABLE_NAME + "("
+                    + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + COLUMN_NOTE + " TEXT,"
+                    + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
+                    + COLUMN_ACCEPTED_CATS + " "
+                    + COLUMN_OFFICIAL_NAME + " "
+                    + COLUMN_LOGIN_ORG + " "
+                    + COLUMN_ID_ORG + " "
+                    + COLUMN_PICKUP_REGIONS + " "
+                    + COLUMN_PICKUP_HOURS + " "
+                    + COLUMN_ORG_CONTACT_INFO + " "
+                    + COLUMN_ORG_DESCRIPTION + " "
+                    + COLUMN_ACCEPTED_ITEMS + " "
+                    + COLUMN_WEBSITE + " "
+                    + COLUMN_NOTICE_WINDOW + " "
+                    + COLUMN_LOGO + " "
+                    + ")";
 
     public OrganizationRecord(String acceptedCategories, String orgNameOfficial, String loginOrg, String idOrg, String pickUpRegions, String pickUpHours, String contactInfoOrg, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo){
         this.acceptedCategories = acceptedCategories;
@@ -25,6 +64,11 @@ public class OrganizationRecord {
         this.pickUpRegions = pickUpRegions;
         this.pickUpHours = pickUpHours;
         this.contactInfoOrg = contactInfoOrg;
+
+
+
+
+
         this.orgDescription = orgDescription;
         this.acceptedItems = acceptedItems;
         this.website = website;
