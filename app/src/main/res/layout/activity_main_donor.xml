@@ -19,6 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Button
+        android:id="@+id/m_call_api_button"
+        android:layout_width="40dp"
+        android:layout_height="20dp" />
+
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

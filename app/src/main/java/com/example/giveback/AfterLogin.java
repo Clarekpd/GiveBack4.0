@@ -24,6 +24,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
@@ -57,6 +59,8 @@ import java.util.List;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
+import static com.example.giveback.R.id.m_call_api_button;
+
  public class AfterLogin extends AppCompatActivity {
 
      private Boolean userType;
@@ -64,6 +68,7 @@ import pub.devrel.easypermissions.EasyPermissions;
      private DrawerLayout drawer;
      private NavigationView navigationView;
      private CalendarView mCalendarView;
+     private Button mCallApiButton;
      GoogleAccountCredential mCredential;
 
      static final int REQUEST_ACCOUNT_PICKER = 1000;
@@ -75,7 +80,9 @@ import pub.devrel.easypermissions.EasyPermissions;
      // TODO: Find out what accountName really is
      private static final String[] SCOPES = { SheetsScopes.SPREADSHEETS_READONLY };
 
-    @Override
+     //Button mCallApiButton = (Button) findViewById(m_call_api_button);
+
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -127,9 +134,6 @@ import pub.devrel.easypermissions.EasyPermissions;
             }
         }
 
-
-
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -148,6 +152,21 @@ import pub.devrel.easypermissions.EasyPermissions;
                                 selectNavigation(menuItem);
                                 return true;
                             }});
+
+
+         mCallApiButton = new Button(this);
+         mCallApiButton.setHeight(100);
+         mCallApiButton.setWidth(100);
+         mCallApiButton.setText("press me");
+        mCallApiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCallApiButton.setEnabled(false);
+                Toast.makeText(getApplicationContext(), " ", Toast.LENGTH_SHORT).show();
+                getResultsFromApi();
+                mCallApiButton.setEnabled(true);
+            }
+        });
 
 
         ////String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo
