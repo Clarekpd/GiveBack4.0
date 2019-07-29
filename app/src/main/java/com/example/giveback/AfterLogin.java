@@ -26,17 +26,21 @@ import com.example.giveback.fragments.TransactionRecyclerFragment;
 import com.example.giveback.fragments.DonorRecyclerFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+
+import io.opencensus.common.Timestamp;
 
 
  public class AfterLogin extends AppCompatActivity {
@@ -140,7 +144,7 @@ import java.util.Date;
          bob.add(new DonorRecord("Magda", "Petra", "oveputtah-0844@yopmail.com", "password", "xopo mag", 10));
 
          DonorRecordAdapter adapter2 = new DonorRecordAdapter(getApplicationContext(), 10, bob);
-         OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, chris);
+         final OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, chris);
 
 
          //Try connecting to FIREBASE.  Should output "Lisa Simpson"
@@ -149,19 +153,19 @@ import java.util.Date;
          String userId = "uLdz7MysfvKyC9cbeQDm";
          //String allUserId = "";
 
-//         DocumentReference docRef = db.collection("donors").document(userId);
-         CollectionReference collRef = db.collection("donors");
-         //docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>()
-         db.collection("donors").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-
-             public void onSuccess(QuerySnapshot querySnapshot) {
-                 Donor donor = (Donor) querySnapshot.toObjects(Donor.class);
-                 donor.getFirstName();
-                 donor.getLastName();
-                 Toast.makeText(getApplicationContext(), donor.firstName + " " + donor.lastName, Toast.LENGTH_LONG).show();
-             }
-         });
-
+         db.collection("donors").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                     @Override
+                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                         if (task.isSuccessful()) {
+                             for (QueryDocumentSnapshot document : task.getResult()) {
+                                 Donor donor = (Donor) document.toObject(Donor.class);
+                                 Toast.makeText(getApplicationContext(), document.getId() + " " + document.getData(), Toast.LENGTH_LONG).show();
+                             }
+                         } else {
+                             Toast.makeText(getApplicationContext(),"Error getting documents",Toast.LENGTH_LONG).show();
+                         }
+                     }
+                 });
          //         DocumentReference docRef = db.collection("donors").document(userId);
 //         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
 //             @Override
