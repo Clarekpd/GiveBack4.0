@@ -1,6 +1,7 @@
  package com.example.giveback;
 
 
+import android.icu.text.DateFormat;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -10,6 +11,7 @@ import android.widget.CalendarView;
 import android.widget.Toast;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -22,14 +24,19 @@ import com.example.giveback.fragments.DonationRequestFragment;
 import com.example.giveback.fragments.OrganizationRecyclerFragment;
 import com.example.giveback.fragments.TransactionRecyclerFragment;
 import com.example.giveback.fragments.DonorRecyclerFragment;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 
  public class AfterLogin extends AppCompatActivity {
@@ -44,119 +51,125 @@ import java.util.ArrayList;
 
      @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+         super.onCreate(savedInstanceState);
 
-        //get bundle and userType from MainActivity
-        Bundle bundle = getIntent().getExtras();
-        userType = bundle.getBoolean("userType");
-        String whereToGo = bundle.getString("whereToGo");
-
-
-        if(userType)
-        {
-            setContentView(R.layout.activity_main_donor);
-            //creating fragment object
-            Fragment fragment = null;
-            if(whereToGo == null) {
-                fragment = new DonorRecyclerFragment();
-                ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
-                ((DonorRecyclerFragment) fragment).setTitle("My Information");
-            }else if(whereToGo.equals("pendCon")){
-                fragment = new TransactionRecyclerFragment();
-                ((TransactionRecyclerFragment) fragment).setData(getPendingConfirmations());
-                ((TransactionRecyclerFragment) fragment).setTitle("Pending Confirmation");
-                ((TransactionRecyclerFragment) fragment).setDonor(userType);
-            }
-
-            //replacing the fragment with the one that was clicked on
-            if (fragment != null) {
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, fragment);
-                ft.commit();
-            }
-        }
-        else
-        {
-            setContentView(R.layout.activity_main_org);
-            //creating fragment object
-            Fragment fragment = null;
-
-            fragment = new OrganizationRecyclerFragment();
-            ((OrganizationRecyclerFragment) fragment).setOrgRecords(getOrganizationRecords());
-            ((OrganizationRecyclerFragment) fragment).setTitle("My Information");
+         //get bundle and userType from MainActivity
+         Bundle bundle = getIntent().getExtras();
+         userType = bundle.getBoolean("userType");
+         String whereToGo = bundle.getString("whereToGo");
 
 
-            //replacing the fragment with the one that was clicked on
-            if (fragment != null) {
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, fragment);
-                ft.commit();
-            }
-        }
+         if (userType) {
+             setContentView(R.layout.activity_main_donor);
+             //creating fragment object
+             Fragment fragment = null;
+             if (whereToGo == null) {
+                 fragment = new DonorRecyclerFragment();
+                 ((DonorRecyclerFragment) fragment).setDonorRecords(getDonorRecords());
+                 ((DonorRecyclerFragment) fragment).setTitle("My Information");
+             } else if (whereToGo.equals("pendCon")) {
+                 fragment = new TransactionRecyclerFragment();
+                 ((TransactionRecyclerFragment) fragment).setData(getPendingConfirmations());
+                 ((TransactionRecyclerFragment) fragment).setTitle("Pending Confirmation");
+                 ((TransactionRecyclerFragment) fragment).setDonor(userType);
+             }
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+             //replacing the fragment with the one that was clicked on
+             if (fragment != null) {
+                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                 ft.replace(R.id.content_frame, fragment);
+                 ft.commit();
+             }
+         } else {
+             setContentView(R.layout.activity_main_org);
+             //creating fragment object
+             Fragment fragment = null;
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(
-                        new NavigationView.OnNavigationItemSelectedListener() {
-                            @Override
-                            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                                selectNavigation(menuItem);
-                                return true;
-                            }});
-
-
-
-
-
-        ////String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo
-        //org record
-
-        ArrayList<OrganizationRecord> chris = new ArrayList<>();
-        chris.add(new OrganizationRecord("food, blankets, clothing, and hygiene products","Are You Hungry", "R U Hungry", "1", "Within 50 miles of Eden Prairie", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
+             fragment = new OrganizationRecyclerFragment();
+             ((OrganizationRecyclerFragment) fragment).setOrgRecords(getOrganizationRecords());
+             ((OrganizationRecyclerFragment) fragment).setTitle("My Information");
 
 
+             //replacing the fragment with the one that was clicked on
+             if (fragment != null) {
+                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                 ft.replace(R.id.content_frame, fragment);
+                 ft.commit();
+             }
+         }
+
+         toolbar = (Toolbar) findViewById(R.id.toolbar);
+         setSupportActionBar(toolbar);
+
+         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+         drawer.addDrawerListener(toggle);
+         toggle.syncState();
+
+         navigationView = (NavigationView) findViewById(R.id.nav_view);
+         navigationView.setNavigationItemSelectedListener(
+                 new NavigationView.OnNavigationItemSelectedListener() {
+                     @Override
+                     public boolean onNavigationItemSelected(MenuItem menuItem) {
+                         selectNavigation(menuItem);
+                         return true;
+                     }
+                 });
 
 
-        ArrayList<DonorRecord> bob = new ArrayList<>();
+         ////String acceptedCategories, String orgName, String login, String id, String pickUpRegions, String pickUpHours, String contactInfo, String orgDescription, String acceptedItems, String website, boolean verification, String advanceNoticeWindow, String logo
+         //org record
 
-        bob.add(new DonorRecord("Ash","Czech","ash_czech@gmail.com","password","Ash_Czezh123",1));
-        bob.add(new DonorRecord("Nora","Barack","overlord@yopmail.com","password","Nora456",2));
-        bob.add(new DonorRecord("Mary","Foran","676-676-87","password","forfor56",3));
-        bob.add(new DonorRecord("Joe","Bob","jacks@outlook.com","password","joe1238",4));
-        bob.add(new DonorRecord("Claire","Clare","bachmann@live.com","password","clareness",5));
-        bob.add(new DonorRecord("Prapthi","Samsonite","123-456-78","password","77samsonite77",6));
-        bob.add(new DonorRecord("Raphael","Solano","7890987","password","jane678",7));
-        bob.add(new DonorRecord("Iris","Sirrkay","squirrel@icloud.com","password","guinea7",8));
-        bob.add(new DonorRecord("Ellie","Hurdlehall","134-6786","password","ells",9));
-        bob.add(new DonorRecord("Magda","Petra","oveputtah-0844@yopmail.com","password","xopo mag",10));
-
-        DonorRecordAdapter adapter2 = new DonorRecordAdapter(getApplicationContext(), 10, bob);
-        OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, chris);
+         ArrayList<OrganizationRecord> chris = new ArrayList<>();
+         chris.add(new OrganizationRecord("food, blankets, clothing, and hygiene products", "Are You Hungry", "R U Hungry", "1", "Within 50 miles of Eden Prairie", "3pm-10pm", " contactruhungry@gmail.com", "We establish, expand access for healthy meal. The people we will be serving includes undernourished children, families on the brink of starvation, senior citizens. We want to ensure that everyone we serve gets 3 meals a day", "Granola Bars, Water, Soup, Peanut Butter", "http://www.ruhungry.us", true, "1 day", "Logo info"));
 
 
+         ArrayList<DonorRecord> bob = new ArrayList<>();
 
-        //Try connecting to FIREBASE.  SHould output "Lisa Simpson"
+         bob.add(new DonorRecord("Ash", "Czech", "ash_czech@gmail.com", "password", "Ash_Czezh123", 1));
+         bob.add(new DonorRecord("Nora", "Barack", "overlord@yopmail.com", "password", "Nora456", 2));
+         bob.add(new DonorRecord("Mary", "Foran", "676-676-87", "password", "forfor56", 3));
+         bob.add(new DonorRecord("Joe", "Bob", "jacks@outlook.com", "password", "joe1238", 4));
+         bob.add(new DonorRecord("Claire", "Clare", "bachmann@live.com", "password", "clareness", 5));
+         bob.add(new DonorRecord("Prapthi", "Samsonite", "123-456-78", "password", "77samsonite77", 6));
+         bob.add(new DonorRecord("Raphael", "Solano", "7890987", "password", "jane678", 7));
+         bob.add(new DonorRecord("Iris", "Sirrkay", "squirrel@icloud.com", "password", "guinea7", 8));
+         bob.add(new DonorRecord("Ellie", "Hurdlehall", "134-6786", "password", "ells", 9));
+         bob.add(new DonorRecord("Magda", "Petra", "oveputtah-0844@yopmail.com", "password", "xopo mag", 10));
+
+         DonorRecordAdapter adapter2 = new DonorRecordAdapter(getApplicationContext(), 10, bob);
+         OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, chris);
+
+
+         //Try connecting to FIREBASE.  Should output "Lisa Simpson"
          FirebaseFirestore db = FirebaseFirestore.getInstance();
 
          String userId = "uLdz7MysfvKyC9cbeQDm";
+         //String allUserId = "";
 
-         DocumentReference docRef = db.collection("donors").document(userId);
-         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-             @Override
-             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                 Donor donor = documentSnapshot.toObject(Donor.class);
+//         DocumentReference docRef = db.collection("donors").document(userId);
+         CollectionReference collRef = db.collection("donors");
+         //docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>()
+         db.collection("donors").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+
+             public void onSuccess(QuerySnapshot querySnapshot) {
+                 Donor donor = (Donor) querySnapshot.toObjects(Donor.class);
+                 donor.getFirstName();
+                 donor.getLastName();
                  Toast.makeText(getApplicationContext(), donor.firstName + " " + donor.lastName, Toast.LENGTH_LONG).show();
              }
          });
+
+         //         DocumentReference docRef = db.collection("donors").document(userId);
+//         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//             @Override
+//             public void onSuccess(DocumentSnapshot documentSnapshot) {
+//                 Donor donor = documentSnapshot.toObject(Donor.class);
+//                 Toast.makeText(getApplicationContext(), donor.firstName + " " + donor.lastName, Toast.LENGTH_LONG).show();
+//             }
+//         });
     }
 
 
