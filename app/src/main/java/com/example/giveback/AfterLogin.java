@@ -132,16 +132,16 @@ import io.opencensus.common.Timestamp;
 
          ArrayList<DonorRecord> bob = new ArrayList<>();
 
-         bob.add(new DonorRecord("Ash", "Czech", "ash_czech@gmail.com", "password", "Ash_Czezh123", 1));
-         bob.add(new DonorRecord("Nora", "Barack", "overlord@yopmail.com", "password", "Nora456", 2));
-         bob.add(new DonorRecord("Mary", "Foran", "676-676-87", "password", "forfor56", 3));
-         bob.add(new DonorRecord("Joe", "Bob", "jacks@outlook.com", "password", "joe1238", 4));
-         bob.add(new DonorRecord("Claire", "Clare", "bachmann@live.com", "password", "clareness", 5));
-         bob.add(new DonorRecord("Prapthi", "Samsonite", "123-456-78", "password", "77samsonite77", 6));
-         bob.add(new DonorRecord("Raphael", "Solano", "7890987", "password", "jane678", 7));
-         bob.add(new DonorRecord("Iris", "Sirrkay", "squirrel@icloud.com", "password", "guinea7", 8));
-         bob.add(new DonorRecord("Ellie", "Hurdlehall", "134-6786", "password", "ells", 9));
-         bob.add(new DonorRecord("Magda", "Petra", "oveputtah-0844@yopmail.com", "password", "xopo mag", 10));
+         bob.add(new DonorRecord("Ash", "Czech", "ash_czech@gmail.com", "donorPassword", "Ash_Czezh123", 1));
+         bob.add(new DonorRecord("Nora", "Barack", "overlord@yopmail.com", "donorPassword", "Nora456", 2));
+         bob.add(new DonorRecord("Mary", "Foran", "676-676-87", "donorPassword", "forfor56", 3));
+         bob.add(new DonorRecord("Joe", "Bob", "jacks@outlook.com", "donorPassword", "joe1238", 4));
+         bob.add(new DonorRecord("Claire", "Clare", "bachmann@live.com", "donorPassword", "clareness", 5));
+         bob.add(new DonorRecord("Prapthi", "Samsonite", "123-456-78", "donorPassword", "77samsonite77", 6));
+         bob.add(new DonorRecord("Raphael", "Solano", "7890987", "donorPassword", "jane678", 7));
+         bob.add(new DonorRecord("Iris", "Sirrkay", "squirrel@icloud.com", "donorPassword", "guinea7", 8));
+         bob.add(new DonorRecord("Ellie", "Hurdlehall", "134-6786", "donorPassword", "ells", 9));
+         bob.add(new DonorRecord("Magda", "Petra", "oveputtah-0844@yopmail.com", "donorPassword", "xopo mag", 10));
 
          DonorRecordAdapter adapter2 = new DonorRecordAdapter(getApplicationContext(), 10, bob);
          final OrganizationRecordAdapter adapter1 = new OrganizationRecordAdapter(getApplicationContext(), 1, chris);

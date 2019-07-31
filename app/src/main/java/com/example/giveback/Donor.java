@@ -55,12 +55,22 @@ public class Donor {
         this.city = city;
     }
 
+    public String getDonorUsername() { return donorUsername; }
+
+    public void setDonorUsername(String donorUsername) { this.donorUsername = donorUsername; }
+
+    public String getDonorPassword() { return donorPassword; }
+
+    public void setDonorPassword(String donorPassword) { this.donorPassword = donorPassword; }
+
     String firstName;
     String lastName;
     String phone;
     String street;
     String state;
     String city;
+    String donorUsername;
+    String donorPassword;
 
     public Donor() {
 

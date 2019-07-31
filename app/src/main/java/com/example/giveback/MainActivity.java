@@ -11,7 +11,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputUsername, inputPassword;
     private Button loginAuthentication;
 
-    //compared to user typed username and password to
-    private static final String correctUsernameDonor = "du";
-    private String correctPasswordDonor = "dp";
+    //compared to user typed donorUsername and donorPassword to
+//    private static final String correctUsernameDonor = "du";
+//    private String correctPasswordDonor = "dp";
+    public String correctUsernameDonor = "du";
+    public String correctPasswordDonor = "dp";
     private String correctUsernameOrg = "ou";
     private String correctPasswordOrg = "op";
 
@@ -33,6 +42,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("donors").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Donor donor = (Donor) document.toObject(Donor.class);
+                        //Toast.makeText(getApplicationContext(),donor.donorUsername + " " + donor.donorPassword, Toast.LENGTH_LONG).show();
+                        correctUsernameDonor = donor.donorUsername;
+                        correctPasswordDonor = donor.donorPassword;
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(),"Error getting credentials",Toast.LENGTH_LONG).show();
+                }
+            }
+
+        });
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
@@ -51,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 //assigns selected radiobutton's id to radiobutton selectedOption
                 selectedOption = findViewById(selectedId);
 
-                //check if selected radioButton, username, and password are all authentic
+                //check if selected radioButton, donorUsername, and donorPassword are all authentic
                 if (selectedOption.getText().toString().equals("Donor") &&
                         inputUsername.getText().toString().equals(correctUsernameDonor) &&
                         inputPassword.getText().toString().equals(correctPasswordDonor)) {
@@ -85,6 +114,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-    }
 
+    }
 }
