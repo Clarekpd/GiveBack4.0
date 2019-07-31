@@ -159,7 +159,7 @@ import io.opencensus.common.Timestamp;
                          if (task.isSuccessful()) {
                              for (QueryDocumentSnapshot document : task.getResult()) {
                                  Donor donor = (Donor) document.toObject(Donor.class);
-                                 Toast.makeText(getApplicationContext(), document.getId() + " " + document.getData(), Toast.LENGTH_LONG).show();
+                                 Toast.makeText(getApplicationContext(),donor.firstName + " " + donor.lastName, Toast.LENGTH_LONG).show();
                              }
                          } else {
                              Toast.makeText(getApplicationContext(),"Error getting documents",Toast.LENGTH_LONG).show();
